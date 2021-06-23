@@ -1,5 +1,5 @@
 import React from "react";
-import "./Detail.css";
+import "./Detail.scss";
 import { connect } from "react-redux";
 
 const Detail = (props) => {
