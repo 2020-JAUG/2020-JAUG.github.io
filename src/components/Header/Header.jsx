@@ -30,7 +30,7 @@ const Header = (props) => {
                 </div>
 
             <div className="headerUser">
-                <Button path="/dentistprofile" destination={props.credentials?.user.name}/>
+                <Button path="/profile" destination={props.credentials?.user.name}/>
                 <p>|</p>
                 <div className="linkLogout" onClick={() => logOut()}>LOGOUT</div>
             </div>
