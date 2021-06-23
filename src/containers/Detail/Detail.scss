@@ -8,3 +8,13 @@
     left: 14em;
     width: 15em;
 }
+
+.back{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    top: -38em;
+    right: 23em;
+    border: solid gray;
+}

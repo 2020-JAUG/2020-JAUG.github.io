@@ -4,7 +4,8 @@
     width: 100%;
     height: 3em;
     max-width: 25em;
-    top: -2em;
+    right: 28em;
+    top: 1em;
 }
 .form input {
     width: 100%;
@@ -55,11 +56,12 @@
     display: flex;
     position: relative;
     overflow: hidden;
+    right: 28em;
     width: 100%;
     bottom: 1.4em;
     height: 3.125em;
     max-width: 25em;
-    top: -2em;
+    top: 2em;
 }
 .form1 .input1 {
     width: 100%;
@@ -109,12 +111,13 @@
 .form2 {
     display: flex;
     position: relative;
+    overflow: hidden;
+    right: 28em;
+    top: 3em;
     bottom: 1.4em;
     width: 100%;
     height: 50px;
     max-width: 400px;
-    position: relative;
-    overflow: hidden;
 }
 .form2 .input2 {
     width: 100%;
@@ -164,12 +167,13 @@
 .form3 {
     display: flex;
     position: relative;
+    overflow: hidden;
+    right: 28em;
+    top: 4em;
     bottom: 1.4em;
     width: 100%;
     height: 3.125em;
     max-width: 25em;
-    position: relative;
-    overflow: hidden;
 }
 .form3 .input3 {
     width: 100%;
@@ -219,12 +223,13 @@
 .form4 {
     display: flex;
     position: relative;
+    overflow: hidden;
+    left: -28em;
+    top: 5em;
     bottom: 1.4em;
     width: 100%;
     height: 3.125em;
     max-width: 25em;
-    position: relative;
-    overflow: hidden;
 }
 .form4 .input4 {
     width: 100%;
@@ -274,16 +279,18 @@
 .form5 {
     display: flex;
     position: relative;
+    overflow: hidden;
+    left: -28em;
+    max-width: 25em;
+    top: 6em;
     bottom: 1.4em;
     width: 100%;
     height: 3.125em;
     max-width: 25em;
-    position: relative;
-    overflow: hidden;
 }
 .form5 .input5 {
     width: 100%;
-    height: 50%;
+    height: 106%;
     background: none;
     color: black;
     padding: 1.25em;
@@ -328,13 +335,14 @@
 
 .form6 {
     display: flex;
+    overflow: hidden;
     position: relative;
+    right: -4em;
+    top: -17.6em;
     bottom: 1.4em;
     width: 100%;
     height: 3.125em;
     max-width: 25em;
-    position: relative;
-    overflow: hidden;
 }
 .form6 .input6 {
     width: 100%;
@@ -383,23 +391,23 @@
 
 .form7 {
     display: flex;
+    overflow: hidden;
     position: relative;
+    right: -4em;
+    top: -17em;
     bottom: 1.4em;
-    width: 100%;
+    width: 70%;
     height: 3.125em;
     max-width: 25em;
-    position: relative;
-    /* overflow: hidden; */
 }
 .form7 .input7 {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 50%;
     background: none;
     color: black;
-    /* padding: 0.25em; */
     padding-left: 6em;
     padding-top: 1em;
     font-size: 1em;
@@ -445,12 +453,14 @@
 .form8 {
     display: flex;
     position: relative;
+    overflow: hidden;
+    left: 4em;
+    max-width: 25em;
+    top: -16em;
     bottom: 1.4em;
     width: 100%;
     height: 3.125em;
     max-width: 25em;
-    position: relative;
-    overflow: hidden;
 }
 .form8 .input8 {
     width: 100%;
@@ -494,5 +504,119 @@
     color: #2ecece;
 }
 .form8 .input8:focus + .lbl-nombre8:after, .form8 .input8:valid + .lbl-nombre8:after {
+    transform: translateX(0%);
+}
+
+.form9 {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    left: 4em;
+    max-width: 25em;
+    top: -15.3em;
+    bottom: 1.4em;
+    width: 100%;
+    height: 3.125em;
+    max-width: 25em;
+}
+.form9 .input9 {
+    width: 100%;
+    height: 50%;
+    background: none;
+    color: black;
+    padding: 1.25em;
+    border: none;
+    outline: 0px;
+}
+.form9 .lbl-nombre9 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 0.0625em solid #c7c7c7;
+}
+.form9 .lbl-nombre9:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.0625em;
+    width: 100%;
+    height: 100%;
+    border-bottom: 0.18em solid #2ecece;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+.text-nomb9 {
+    position: absolute;
+    bottom: 0.3125em;
+    left: 0;
+    transition: all 0.3s ease;
+    color: rgb(121, 117, 117);
+}
+.form9 .input9:focus + .lbl-nombre9 .text-nomb9, .form9 .input9:valid + .lbl-nombre9 .text-nomb9 {
+    transform: translateY(-150%);
+    font-size: 0.875em;
+    color: #2ecece;
+}
+.form9 .input9:focus + .lbl-nombre9:after, .form9 .input9:valid + .lbl-nombre9:after {
+    transform: translateX(0%);
+}
+
+.form10 {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    left: 4em;
+    max-width: 25em;
+    top: -14.4em;
+    bottom: 1.4em;
+    width: 100%;
+    height: 3.125em;
+    max-width: 25em;
+}
+.form10 .input10 {
+    width: 100%;
+    height: 50%;
+    background: none;
+    color: black;
+    padding: 1.25em;
+    border: none;
+    outline: 0px;
+}
+.form10 .lbl-nombre10 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 0.0625em solid #c7c7c7;
+}
+.form10 .lbl-nombre10:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.0625em;
+    width: 100%;
+    height: 100%;
+    border-bottom: 0.18em solid #2ecece;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+.text-nomb10 {
+    position: absolute;
+    bottom: 0.3125em;
+    left: 0;
+    transition: all 0.3s ease;
+    color: rgb(121, 117, 117);
+}
+.form10 .input10:focus + .lbl-nombre10 .text-nomb10, .form10 .input10:valid + .lbl-nombre10 .text-nomb10 {
+    transform: translateY(-150%);
+    font-size: 0.875em;
+    color: #2ecece;
+}
+.form10 .input10:focus + .lbl-nombre10:after, .form10 .input10:valid + .lbl-nombre10:after {
     transform: translateX(0%);
 }

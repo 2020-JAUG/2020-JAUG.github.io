@@ -1,6 +1,8 @@
 import React from "react";
-import "./Detail.css";
+import "./Detail.scss";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+
 
 const Detail = (props) => {
 
@@ -23,8 +25,10 @@ const Detail = (props) => {
                 <p className="text">{props.movies.vote_average}</p>
                 <p className="text">{props.movies.genre_id}</p>
                 <p className="text">{props.movies.overview}</p>
-                {/* <p className="text">{props.detalle.getSimilarMovies}</p> */}
-                <div className="enviar" ></div>
+                {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
+                <Link className="back" to={"/upcoming"} >Go Back</Link>
+                <Link to={"/toprated"} >topRated</Link>
+
             </div>
         </div>
     </div>

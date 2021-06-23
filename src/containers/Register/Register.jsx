@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Register.css";
+import "./Register.scss";
 import { connect } from "react-redux";
-import "./Register.css";
+import "../../Global.css";
 
 const Register = () => {
   // Hook
@@ -106,7 +106,7 @@ const Register = () => {
           setErrors({
             ...errors,
             ePassword:
-              "At least 8 movies, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special movies",
+              "At least 8 movies, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.",
           });
         } else {
           setErrors({ ...errors, ePassword: "" });
@@ -151,8 +151,8 @@ const Register = () => {
   };
 
   return (
-    <div className="vistaRegisterClient">
-      <div className="leftSide"></div>
+    <div className="vistaRegister">
+
       <div className="formulario1">
         <div className="box1">
           <div className="errorsText">{errors.eName}</div>
@@ -206,7 +206,7 @@ const Register = () => {
         </div>
 
         <div className="box1">
-          <div className="errorsText">{errors.ePassword}</div>
+          <div className="errorsText11">{errors.ePassword}</div>
           <form className="form3">
             <input
               className="input3"
@@ -223,7 +223,7 @@ const Register = () => {
         </div>
 
         <div className="box1">
-          <div className="errorsText">{errors.ePassword2}</div>
+          <div className="errorsText1">{errors.ePassword2}</div>
           <form className="form4">
             <input
               className="input4"
@@ -308,7 +308,7 @@ const Register = () => {
         </div>
 
         <div className="box1">
-          <div className="errorsText">{errors.eEmail}</div>
+          <div className="errorsText12">{errors.eEmail}</div>
           <form className="form9">
             <input
               className="input9"
@@ -325,7 +325,7 @@ const Register = () => {
         </div>
 
         <div className="box1">
-          <div className="errorsText">{errors.ePhone}</div>
+          <div className="errorsText13">{errors.ePhone}</div>
           <form className="form10">
             <input
               className="input10"

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './UpComing.css';
+import './UpComing.scss';
 import axios from 'axios';
 import { ADD_MOVIES } from '../../redux/types';
 import { connect } from 'react-redux';

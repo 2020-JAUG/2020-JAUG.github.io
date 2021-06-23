@@ -1,0 +1,90 @@
+.vistaRegister{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario1{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+    border-radius: 0.1em;
+    /* border: solid gray; */
+    box-sizing: border-box;
+    padding-top: 1em;
+    top: -3em;
+}
+
+.errorsText {
+    font-size: 0.7em;
+    color: red;
+    position: relative;
+    top: 5.5em;
+    left: -41em;
+}
+
+.errorsText1 {
+    font-size: 0.7em;
+    color: red;
+    position: relative;
+    top: 11.3em;
+    right: 40em;
+}
+.errorsText11 {
+    font-size: 0.7em;
+    color: red;
+    position: relative;
+    top: 9.9em;
+    right: 40em;
+}
+.errorsText12 {
+    font-size: 0.7em;
+    color: red;
+    position: relative;
+    top: -17.6em;
+    left: 5em;
+}
+.errorsText13 {
+    font-size: 0.7em;
+    color: red;
+    position: relative;
+    top: -16.3em;
+    left: 5em;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    align-items: center;
+    left: 10em;
+}
+
+
+.registerButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 2em;
+    top: -7em;
+    right: 3.4em;
+    width: 5em;
+    border-radius: 0.2em;
+    border: solid 0.02em #141427;
+    cursor: pointer;
+}
+
+.registerButton:hover {
+    background-color: rgb(146, 142, 143);
+    transition: 0.2s;
+}
