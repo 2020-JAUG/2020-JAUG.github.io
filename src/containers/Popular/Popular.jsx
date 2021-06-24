@@ -5,10 +5,10 @@ import { ADD_MOVIES } from "../../redux/types";
 import { connect } from "react-redux";
 import spinner from "../../assets/spinner2.gif";
 
-const TopRated = (props) => {
+const Popular = (props) => {
   let history = useHistory();
 
-  const [rated, setRated] = useState([]);
+  const [popular, setPopular] = useState([]);
 
   //Equivalente a componentDidMount en componentes de Clase
   useEffect(() => {
@@ -17,9 +17,9 @@ const TopRated = (props) => {
 
   const topRated = async () => {
     try {
-      let res = await axios.get("http://localhost:3001/movies");
+      let res = await axios.get("http://localhost:3001/movies/popular");
 
-      setRated(res.data.results);
+      setPopular(res.data.results);
 
       console.log(res.data.results);
 
@@ -49,15 +49,15 @@ const TopRated = (props) => {
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 
-  if (rated[0]?.id) {
+  if (popular[0]?.id) {
     return (
       <div className="allContent">
-        {/* <div className="movieImage">
+        <div className="movieImage">
           <div className="fondoIMage"></div>
-        </div> */}
+        </div>
 
         <div className="movieContent">
-          {rated.map((movie, index) => (
+          {popular.map((movie, index) => (
             <div className="content" onClick={() => clickHandler(movie)}>
               <div className="content2" key={index}>
                 <p className="text">{movie.title} </p>
@@ -93,4 +93,4 @@ const TopRated = (props) => {
 export default connect((state) => ({
   credentials: state.credentials,
   movies: state.movies,
-}))(TopRated);
+}))(Popular);

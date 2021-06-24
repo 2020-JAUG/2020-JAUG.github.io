@@ -1,11 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './UpComing.scss';
 import axios from 'axios';
 import { ADD_MOVIES } from '../../redux/types';
 import { connect } from 'react-redux';
 import spinner from '../../assets/spinner2.gif';
+// import Button_more_less from '../../components/Button_more_less/Button_more_less';
 
 
 const UpComing = (props) => {
@@ -38,6 +38,7 @@ const UpComing = (props) => {
         props.dispatch({ type: ADD_MOVIES, payload: detail });
         history.push("/detail");
       };
+
     // const llevame = () => {
 
     //     let token = props.credentials?.token;
@@ -49,6 +50,7 @@ const UpComing = (props) => {
     //         history.push("/appointments");
     //     }
     // }
+
 
     const baseImgUrl = "https://image.tmdb.org/t/p"
     const size = "w200"
@@ -62,13 +64,15 @@ const UpComing = (props) => {
                     <div className="fondoIMage"></div>
                 </div>
 
+                {/* <Button_more_less/> */}
+
                 <div className="movieContent">
 
                     {upComing.map((movie, index) => (
 
                         <div className="content" onClick={() => clickHandler(movie)}>
                             <div className="content2" key={index} >
-                                    <p className="text">Name: {movie.title} </p>
+                                    <p className="text">{movie.title} </p>
                                     <img src={`${baseImgUrl}/${size}${movie.poster_path}`}  alt="poster"/>
                                     {/* <p className="text">{movie.popularity}</p> */}
                                     {/* <p className="text">{movie.release_date}</p>
@@ -78,6 +82,7 @@ const UpComing = (props) => {
                                     {/* <p className="text">{movie.getSimilarMovies}</p>
 
                                 {/* <div className="enviar" onClick={() => llevame()}></div> */}
+
                             </div>
                         </div>
                     ))}

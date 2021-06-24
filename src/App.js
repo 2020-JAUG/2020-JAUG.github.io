@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Fragment } from 'react'
 import Header from './components/Header/Header';
@@ -10,6 +10,7 @@ import Detail from './containers/Detail/Detail';
 import Login from './containers/login/Login';
 import TopRated from './containers/TopRated/TopRated';
 import UpComing from './containers/UpComing/UpComing.jsx';
+import Popular from './containers/Popular/Popular';
 
 
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/register" exact component={Register}/>
               <Route path="/upcoming" exact component={UpComing}/>
               <Route path="/toprated" exact component={TopRated}/>
+              <Route path="/popular" exact component={Popular}/>
               <Route path="/detail" exact component={Detail}/>
             </Switch>
 
