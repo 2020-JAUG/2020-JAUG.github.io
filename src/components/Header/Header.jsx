@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../Button/Button';
-import './Header.css';
 import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';
@@ -30,6 +29,7 @@ const Header = (props) => {
                 </div>
 
             <div className="headerUser">
+                <input />
                 <Button path="/profile" destination={props.credentials?.user.name}/>
                 <p>|</p>
                 <div className="linkLogout" onClick={() => logOut()}>LOGOUT</div>
