@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types';
-import './Login.scss';
+
 
 const Login = (props) => {
 
@@ -63,7 +63,7 @@ const Login = (props) => {
 
     const logeame = async () => {
 
-        try{
+
         // A continuamos, generamos el body de datos
         let body = {
             email : credentials.email,
@@ -71,24 +71,24 @@ const Login = (props) => {
         }
         // Envío por axios
 
-        let res = await axios.post("http://localhost:3001/login", body);
-        // let token = res.data.token;
+        axios
+        .post('http://localhost:3001/login', body)
+        .then((res) => {
+            console.log('esto es res', res)
+            //Guardo en RDX
+            props.dispatch({type:LOGIN,payload:res.data});
 
-        console.log('login', res.data);
-        //Guardo en RDX
-        props.dispatch({type:LOGIN, payload:res.data});
-
-        // redirección
-        setTimeout(()=>{
-            history.push("/");
-        },750);
-
-        }catch{
+            if(!res.data.user.isAdmin){
+                history.push('/user')
+            } else {
+                history.push('/admin')
+            }
+        })
+        .catch((msgError) => {
             setMensajeError({...msgError, eValidate: 'Wrong email or password'});
-        }
 
+        });
     }
-
 
     return(
         <div className="vistaLogin">
@@ -120,6 +120,5 @@ const Login = (props) => {
         </div>
         )
 }
-
 
 export default connect()(Login);
