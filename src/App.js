@@ -11,6 +11,8 @@ import Login from './containers/login/Login';
 import TopRated from './containers/TopRated/TopRated';
 import UpComing from './containers/UpComing/UpComing.jsx';
 import Popular from './containers/Popular/Popular';
+import Rent from './containers/Rent/Rent.jsx';
+import MoviesGenre from './containers/MoviesGenre/MoviesGenre';
 
 
 
@@ -29,6 +31,8 @@ function App() {
               <Route path="/toprated" exact component={TopRated}/>
               <Route path="/popular" exact component={Popular}/>
               <Route path="/detail" exact component={Detail}/>
+              <Route path="/moviesgenre" exact component={MoviesGenre}/>
+              <Route path="/rent" exact component={Rent}/>
             </Switch>
 
           </BrowserRouter>
