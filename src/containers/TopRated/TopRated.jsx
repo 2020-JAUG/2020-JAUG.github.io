@@ -6,56 +6,73 @@ import { connect } from "react-redux";
 import spinner from "../../assets/spinner2.gif";
 
 const TopRated = (props) => {
+
   let history = useHistory();
 
-  const [rated, setRated] = useState([]);
+    const [rated, setRated] = useState([]);
+    const [page, setPage] = useState(1);
+    const [oldpage, setOldPage] = useState(1);
 
-  //Equivalente a componentDidMount en componentes de Clase
-  useEffect(() => {
-    topRated();
-  }, []);
+    //Equivalente a componentDidMount en componentes de Clase
+    useEffect(() =>{
+        topRated();
+    },[])
 
-  const topRated = async () => {
-    try {
-      let res = await axios.get("http://localhost:3001/movies");
+    useEffect(()=> {
 
-      setRated(res.data.results);
+        if(page !== oldpage){
+            setOldPage(page);
+            topRated();
+        }
 
-      console.log(res.data.results);
+    });
 
-      props.dispatch({ type: ADD_MOVIES, payload: res.data.results });
-    } catch (error) {
-      console.log({ message: error.message });
+    const topRated = async () => {
+        try {
+            let res = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&language=en-US&page=${page}`);
+
+            setRated(res.data.results);
+
+            props.dispatch({type:ADD_MOVIES,payload:res.data.results});
+        } catch (error) {
+            console.log( { message: error.message} );
+        }
     }
-  };
 
-  const clickHandler = (detail) => {
+    const changePage = (operacion) => {
 
-    props.dispatch({ type: ADD_MOVIES, payload: detail });
-    history.push("/detail");
-  };
-  // const llevame = () => {
+      if(operacion === "+"){
 
-  //     let token = props.credentials?.token;
+        //Cambiamos la página
+        let newPage = page + 1;
 
-  //     if(!token) {
-  //         history.push("/login")
-  //     } else {
+        setOldPage(page);
+        setPage(newPage);
 
-  //         history.push("/appointments");
-  //     }
-  // }
+
+      } else if (operacion === "-" && page > 1) {
+
+        let newPage = page - 1;
+        setOldPage(page);
+        setPage(newPage);
+      }
+
+    }
+    const clickHandler = (detail) => {
+
+      props.dispatch({ type: ADD_MOVIES, payload: detail });
+      history.push("/detail");
+    };
 
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 
+
   if (rated[0]?.id) {
     return (
       <div className="allContent">
-        {/* <div className="movieImage">
-          <div className="fondoIMage"></div>
-        </div> */}
-
+                <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
+                <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
         <div className="movieContent">
           {rated.map((movie, index) => (
             <div className="content" onClick={() => clickHandler(movie)}>
@@ -65,14 +82,6 @@ const TopRated = (props) => {
                   src={`${baseImgUrl}/${size}${movie.poster_path}`}
                   alt="poster"
                 />
-                {/* <p className="text">{movie.popularity}</p> */}
-                {/* <p className="text">{movie.release_date}</p>
-                                    {/* <p className="text">{movie.vote_average}</p>
-                                    {/* <p className="text">{movie.genre_id}</p>
-                                    {/* <p className="text">{movie.overview}</p> */}
-                {/* <p className="text">{movie.getSimilarMovies}</p>
-
-                                {/* <div className="enviar" onClick={() => llevame()}></div> */}
               </div>
             </div>
           ))}

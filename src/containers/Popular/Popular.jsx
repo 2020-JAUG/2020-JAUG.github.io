@@ -6,52 +6,72 @@ import { connect } from "react-redux";
 import spinner from "../../assets/spinner2.gif";
 
 const Popular = (props) => {
-  let history = useHistory();
 
   const [popular, setPopular] = useState([]);
+  const [page, setPage] = useState(1);
+  const [oldpage, setOldPage] = useState(1);
 
   //Equivalente a componentDidMount en componentes de Clase
-  useEffect(() => {
-    topRated();
-  }, []);
+  useEffect(() =>{
+    findPopular();
+  },[])
 
-  const topRated = async () => {
+  useEffect(()=> {
+
+    if(page !== oldpage){
+      setOldPage(page);
+      findPopular();
+    }
+
+  });
+
+  const findPopular = async () => {
     try {
-      let res = await axios.get("http://localhost:3001/movies/popular");
+      let res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&language=en-US&page=${page}`);
 
       setPopular(res.data.results);
 
-      console.log(res.data.results);
-
-      props.dispatch({ type: ADD_MOVIES, payload: res.data.results });
+      props.dispatch({type:ADD_MOVIES,payload:res.data.results});
     } catch (error) {
-      console.log({ message: error.message });
+      console.log( { message: error.message} );
     }
-  };
+  }
+
+  const changePage = (operacion) => {
+
+    if(operacion === "+"){
+
+      //Cambiamos la página
+      let newPage = page + 1;
+
+      setOldPage(page);
+      setPage(newPage);
+
+
+    } else if (operacion === "-" && page > 1) {
+
+      let newPage = page - 1;
+      setOldPage(page);
+      setPage(newPage);
+    }
+
+  }
 
   const clickHandler = (detail) => {
 
     props.dispatch({ type: ADD_MOVIES, payload: detail });
     history.push("/detail");
   };
-  // const llevame = () => {
-
-  //     let token = props.credentials?.token;
-
-  //     if(!token) {
-  //         history.push("/login")
-  //     } else {
-
-  //         history.push("/appointments");
-  //     }
-  // }
 
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
+  let history = useHistory();
 
   if (popular[0]?.id) {
     return (
       <div className="allContent">
+                <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
+                <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
         <div className="movieImage">
           <div className="fondoIMage"></div>
         </div>
