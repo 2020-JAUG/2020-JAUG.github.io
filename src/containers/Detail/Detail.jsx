@@ -1,47 +1,47 @@
 import React from "react";
-import "./Detail.scss";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 const Detail = (props) => {
+  const baseImgUrl = "https://image.tmdb.org/t/p";
+  const size = "w300";
 
-    const baseImgUrl = "https://image.tmdb.org/t/p";
-    const size = "w200";
 
-    console.log('props', props);
+ 
 
-    if(props.movies?.id){
-  return (
-
-    <div className="info">
-      {/* {console.log(props)} */}
-       <div className="content tarjeta">
-            <div className="content2 tarjeta" >
-                <p className="text">Name: {props.movies.title} </p>
-                <img src={`${baseImgUrl}/${size}${props.movies.poster_path}`}  alt="poster"/>
-                <p className="text">{props.movies.popularity}</p>
-                <p className="text">{props.movies.release_date}</p>
-                <p className="text">{props.movies.vote_average}</p>
-                <p className="text">{props.movies.genre_id}</p>
-                <p className="text">{props.movies.overview}</p>
-                {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
-                <Link className="back" to={"/upcoming"} >Go Back</Link>
-                <Link to={"/toprated"} >topRated</Link>
-
-            </div>
-        </div>
-    </div>
-  );
-
-} else {
+  if (props.movies?.id) {
     return (
-        <div>
-            ESTOY CARGANDO!
+      <div className="contentDetail">
+        <div className="vistaDetail">
+          <div className="imagenD">
+            <img
+              src={`${baseImgUrl}/${size}${props.movies.poster_path}`}
+              alt="poster"
+            />
+          </div>
+          <div className="contentSpan">
+            <div className="textD titleD">{props.movies.original_title} </div>
+            <div className="textD vote">Vote {props.movies.vote_average}</div>
+            <div className="textD">populatity{props.movies.popularity}</div>
+            <div className="textD">premiere{props.movies.release_date}</div>
+            <div className="textD">original language {props.movies.original_language}</div>
+            <div className="textD">Overview {props.movies.overview}</div>
+            {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
+          </div>
         </div>
-    )
-}
-}
+        <Link to={"/rent"}>Rent</Link>
+        <div className="arrows">
+          <Link className="" to={"/upcoming"}>
+            Go Back
+          </Link>
+          <Link to={"/toprated"}>topRated</Link>
+        </div>
+      </div>
+    );
+  } else {
+    return <div>ESTOY CARGANDO!</div>;
+  }
+};
 
 export default connect((state) => ({
   credentials: state.credentials,

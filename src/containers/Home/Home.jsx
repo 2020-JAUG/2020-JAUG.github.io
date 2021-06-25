@@ -1,5 +1,4 @@
 import React from 'react';
-import './Home.css';
 import {useHistory} from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -13,7 +12,7 @@ const Home = (props) => {
 
     // }
 
-    if(props.credentials.client?.name){
+    if(props.credentials.user?.name){
 
         return(
             <div className="homeContainer">

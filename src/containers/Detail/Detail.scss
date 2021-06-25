@@ -1,20 +1,73 @@
-.tarjeta {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contentDetail {
     display: flex;
-    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    // top: 4em;
+    width: 100vw;
+    height: 100vh;
 
-    left: 14em;
-    width: 15em;
-}
+    .vistaDetail {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 87.6em;
+        height: 35em;
+        overflow: scroll;
+        background-color: #383a3c67;
+    }
 
-.back{
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    .contentSpan {
+        display: flex;
+        flex-direction: column;
+        width: 42em;
+        height: 21em;
+    }
 
-    top: -38em;
-    right: 23em;
-    border: solid gray;
+    .textD {
+        display: flex;
+        height: 20em;
+        width: 46em;
+        justify-content: center;
+        border: solid rgba(128, 128, 128, 0) 0.2em;
+        padding-left: 4em;
+        line-height: 1.5;
+        color: white;
+    }
+
+    .titleD {
+        position: relative;
+        width: 20em;
+        justify-content: center;
+        right: 5em;
+        font-size: 1.4em;
+        top: -1em;
+    }
+    .vote {
+        color: black;
+        font-size: 1em;
+        height: 21em;
+        text-align: center;
+        width: 5em;
+        border-radius: 50%;
+        background: green;
+    }
+    .arrows {
+        display: flex;
+        height: 6em;
+        width: auto;
+        padding-top: 2em;
+    }
+
+    .imagenD {
+        display: flex;
+        margin-left: -16em;
+        width: 21em;
+    }
 }

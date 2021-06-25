@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Register.scss";
 import { connect } from "react-redux";
 import "../../Global.css";
 

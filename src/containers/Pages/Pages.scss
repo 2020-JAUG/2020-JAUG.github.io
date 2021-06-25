@@ -1,0 +1,24 @@
+.vistaPaginacion {
+    display : flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.boton {
+    height: 8em;
+    width: 8em;
+
+    background-color: rgba(35, 81, 84, 0.301);
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+
+}
+
+.boton:hover{
+    background-color: rgb(49, 45, 46);
+    transition: 0.2s;
+}
