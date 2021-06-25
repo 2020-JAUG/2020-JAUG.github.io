@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_menu_btn {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+}
+.main_menu_btn:hover {
+    background-color: rgb(149, 149, 192);
+    }
+.drop_down {
+    position: relative;
+    display: inline-block;
+}
+.drop_down_child {
+    display: none;
+    background-color: skyblue;
+    min-width: 200px;
+}
+.drop_down_child .a {
+    color: rgb(97, 97, 121);
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+.drop_down:hover .drop_down_child {
+    display: block;
+}
