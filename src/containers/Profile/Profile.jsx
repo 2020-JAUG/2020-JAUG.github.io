@@ -1,104 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Profile.scss";
-import axios from "axios";
 import { connect } from "react-redux";
-import { LOGOUT } from "../../redux/types";
-// import imgUser from '../../img/user.png'
 import spinner from "../../assets/spinner2.gif";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FAVORITES } from "../../redux/types"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Profile = (props) => {
   let history = useHistory();
 
-  const [user, setUser] = useState({
-    dateApp: [],
-    i: 0,
-  });
+  const cambiaDatos = async (info) => {
+    switch (info) {
+      case "profile":
+        props.dispatch({ type: FAVORITES, payload: info });
 
-  // Handler
-  const updateUSer = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
-  useEffect(() => {
-    searchData();
-  }, []);
+        break;
 
-  useEffect(() => {});
+      case "favoritos":
+        props.dispatch({ type: FAVORITES, payload: info });
 
-  const searchData = async () => {
-    try {
-      let token = props.credentials?.token;
-      let user = props.credentials?.user;
+        break;
 
-      let body = {
-        user: user._id,
-      };
+      case "orders":
+        props.dispatch({ type: FAVORITES, payload: info });
 
-      let res = await axios.get("http://localhost:3001/users", body, { headers: { authorization: "Bearer " + token } });
+        break;
+      default:
 
-      setUser({ ...user, dateApp: res.data });
-    } catch (error) {
-      console.log(error);
+        break;
     }
   };
 
-  const logOut = () => {
-    props.dispatch({ type: LOGOUT });
-  };
-
-  const goRight = () => {
-    let i = user.i;
-
-    if (i < user.dateApp.length - 1) {
-      i++;
-    } else {
-      i= 0;
-    }
-     setUser({ ...user, i: i });
-  };
-
-  const goLeft = () => {
-    let i = user.i;
-
-    if (i > 0) {
-      i--;
-    } else {
-      i = user.dateApp.length - 1;
-    }
-    setUser({ ...user, i: i });
-  };
-
-
-  let data1 = user.dateApp;
-
-  let result = [];
-  for (let j = 0; j < data1.length; j++) {
-    if (user.i === j) {
-      result.push(
-        <div className="clientAppointmentAll" >
-        <div className="clientAppointmentProfile" >
-          <div className="buttonGo" onClick={() => goLeft()}>
-          <FontAwesomeIcon icon={faArrowLeft}/>
-          </div>
-
-          <div className="appointmentCardProfile">
-            <p>CLINIC : {props.credential?.data1[j].user.name}</p>
-            <p>PHONE : {data1[j].user.phone}</p>
-            <p>EMAIL : {data1[j].user.Email}</p>
-            <p>DENTIST : {data1[j].dentistName}</p>
-            {/* <p>DATE : {convertDate(data1[j].date)}</p> */}
-          </div>
-
-          <div className="buttonGo" onClick={() => goRight()}>
-          <FontAwesomeIcon icon={faArrowRight}/>
-          </div>
-        </div>
-        </div>
-      );
-    }
-  }
 
   if (props.credentials?.token) {
     return (
@@ -123,10 +56,10 @@ const Profile = (props) => {
                 >
                   UPDATE
                 </div>
-                <div className="buttonLogoutC" onClick={() => logOut()}>
-                  LOGOUT
-                </div>
               </div>
+                <div className="botomMenuLateral"onClick={() => cambiaDatos("profile")}>Profile</div>
+                <div className="botomMenuLateral"onClick={() => cambiaDatos("favoritos")}>favorites</div>
+                <div className="botomMenuLateral"onClick={() => cambiaDatos("orders")}>Orders</div>
             </div>
           </div>
         </div>
@@ -149,4 +82,5 @@ const Profile = (props) => {
 
 export default connect((state) => ({
   credentials: state.credentials,
+  infoUser: state.infoUser
 }))(Profile);
