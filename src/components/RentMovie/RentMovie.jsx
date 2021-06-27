@@ -12,10 +12,12 @@ const RentMovie = (props) => {
     const [datos,setDatos] = useState({
         token: props.credentials?.token,
         user: props.credentials?.user,
-        movieId: props.movieId
+        movieId: props.movies?.genre_ids,
+        movieTitle: props.movies?.original_title,
+        moviePoster: props.movies?.poster_path
     });
-    const [msgError, setMensajeError] = useState({eFields: 'All fields are required'});
 
+    const [msgError, setMensajeError] = useState({eFields: 'All fields are required'});
 
   // Esto es un Handler
   const updateCredentials = (e) => {
@@ -31,12 +33,13 @@ const RentMovie = (props) => {
   const order = async () => {
 
     let token = datos.token;
-    let user = datos.user;
 
     // A continuamos, generamos el body de datos
     let body = {
-        userID : user.userId,
-        movieId: props.movieId,
+        user : datos.user,
+        movieId: datos.movieId,
+        movieTitle: datos.movieTitle,
+        moviePoster : datos.moviePoster,
         rentalDate: props.rentalDate,
         returnDate: props.returnDate
     }
@@ -96,8 +99,8 @@ const RentMovie = (props) => {
             <div className="box1">
                 <div className="errorsText">{msgError}</div>
                     <form className="form1">
-                    <input className="input1" name="rentalDate" type="date" placeholder="rentalDate"  onChange={updateCredentials} onBlur={() => checkError ("email")} required/>
-                    <input className="input1" name="rentalDate2" type="date" placeholder="returnDate"  onChange={updateCredentials} onBlur={() => checkError ("email")} required/>
+                    <input className="input1" name="rentalDate" type="date"   onChange={updateCredentials} onBlur={() => checkError ("email")} required/>
+                    <input className="input1" name="rentalDate2" type="date"  onChange={updateCredentials} onBlur={() => checkError ("email")} required/>
                     </form>
             </div>
             <button onClick={() => order()}>Order</button>
