@@ -9,7 +9,11 @@ const RentMovie = (props) => {
 
     let history = useHistory();
 
-    const [datos,setDatos] = useState({date:'', date1:''});
+    const [datos,setDatos] = useState({
+        token: props.credentials?.token,
+        user: props.credentials?.user,
+        movieId: props.movieId
+    });
     const [msgError, setMensajeError] = useState({eFields: 'All fields are required'});
 
 
@@ -26,10 +30,12 @@ const RentMovie = (props) => {
 
   const order = async () => {
 
+    let token = datos.token;
+    let user = datos.user;
 
     // A continuamos, generamos el body de datos
     let body = {
-        userId : props.userId,
+        userID : user.userId,
         movieId: props.movieId,
         rentalDate: props.rentalDate,
         returnDate: props.returnDate
@@ -37,7 +43,7 @@ const RentMovie = (props) => {
     // Envío por axios
 
     axios
-    .post('http://localhost:3001/orders', body)
+    .post('http://localhost:3001/orders', body, {headers:{'authorization':'Bearer ' + token}})
     .then((res) => {
         console.log('esto es res', res)
         //Guardo en RDX
@@ -82,7 +88,11 @@ const RentMovie = (props) => {
 
 
     }
+
+    if(props.credentials?.token) {
+
         return (
+            <div>
             <div className="box1">
                 <div className="errorsText">{msgError}</div>
                     <form className="form1">
@@ -90,7 +100,14 @@ const RentMovie = (props) => {
                     <input className="input1" name="rentalDate2" type="date" placeholder="returnDate"  onChange={updateCredentials} onBlur={() => checkError ("email")} required/>
                     </form>
             </div>
+            <button onClick={() => order()}>Order</button>
+            </div>
         )
+    } else {
+        return (
+            <h1>Cargando</h1>
+        )
+    }
 }
 
 
