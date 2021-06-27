@@ -14,6 +14,7 @@ const Popular = (props) => {
   //Equivalente a componentDidMount en componentes de Clase
   useEffect(() =>{
     findPopular();
+    //eslint-disable-next-line
   },[])
 
   useEffect(()=> {
@@ -30,7 +31,7 @@ const Popular = (props) => {
       let res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&language=en-US&page=${page}`);
 
       setPopular(res.data.results);
-
+      //Guardo en RDX
       props.dispatch({type:ADD_MOVIES,payload:res.data.results});
     } catch (error) {
       console.log( { message: error.message} );
