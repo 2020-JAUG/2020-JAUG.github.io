@@ -17,6 +17,7 @@ const UpComing = (props) => {
     //Equivalente a componentDidMount en componentes de Clase
     useEffect(() =>{
         upcoming();
+        //eslint-disable-next-line
     },[])
 
     useEffect(()=> {
@@ -50,7 +51,6 @@ const UpComing = (props) => {
             setOldPage(page);
             setPage(newPage);
 
-
         } else if (operacion === "-" && page > 1) {
 
             let newPage = page - 1;
@@ -63,7 +63,7 @@ const UpComing = (props) => {
 
         props.dispatch({ type: ADD_MOVIES, payload: detail });
         history.push("/detail");
-      };
+    };
 
     const baseImgUrl = "https://image.tmdb.org/t/p"
     const size = "w200"

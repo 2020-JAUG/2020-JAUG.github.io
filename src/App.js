@@ -11,9 +11,8 @@ import Login from './containers/login/Login';
 import TopRated from './containers/TopRated/TopRated';
 import UpComing from './containers/UpComing/UpComing.jsx';
 import Popular from './containers/Popular/Popular';
-import Rent from './containers/Rent/Rent.jsx';
 import MoviesGenre from './containers/MoviesGenre/MoviesGenre';
-
+import RentMovie from './components/RentMovie/RentMovie';
 
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
               <Route path="/popular" exact component={Popular}/>
               <Route path="/detail" exact component={Detail}/>
               <Route path="/moviesgenre" exact component={MoviesGenre}/>
-              <Route path="/rent" exact component={Rent}/>
+              <Route path="/rentmovie" exact component={RentMovie}/>
             </Switch>
 
           </BrowserRouter>
