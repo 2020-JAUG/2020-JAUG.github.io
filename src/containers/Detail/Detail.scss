@@ -12,6 +12,13 @@
     width: 100vw;
     height: 100vh;
 
+    .back_img {
+        width: 100vw;
+        height: 30em;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
     .vistaDetail {
         display: flex;
         flex-direction: row;
@@ -19,8 +26,7 @@
         align-items: center;
         width: 87.6em;
         height: 35em;
-        overflow: scroll;
-        background-color: #383a3c67;
+        // overflow: scroll;
     }
 
     .contentSpan {
@@ -38,23 +44,23 @@
         border: solid rgba(128, 128, 128, 0) 0.2em;
         padding-left: 4em;
         line-height: 1.5;
-        color: white;
+        color: rgb(0, 0, 0);
     }
 
     .titleD {
         position: relative;
         width: 20em;
         justify-content: center;
-        right: 5em;
+        right: 6em;
         font-size: 1.4em;
-        top: -1em;
+        top: -2em;
     }
     .vote {
         color: black;
         font-size: 1em;
-        height: 21em;
+        height: 11em;
         text-align: center;
-        width: 5em;
+        width: 6em;
         border-radius: 50%;
         background: green;
     }
@@ -67,7 +73,7 @@
 
     .imagenD {
         display: flex;
-        margin-left: -16em;
+        margin-left: -11em;
         width: 21em;
     }
 }

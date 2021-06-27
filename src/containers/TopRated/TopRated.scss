@@ -32,12 +32,13 @@
         padding: 2em;
         border: 1.7px solid #6f6d6d;
         border-radius: 1em;
-        background-color:#b2b6bb;
+        background-color:hsla(222, 8%, 68%, 0.529);
+        &:hover {
+            opacity: 0.5;
+            // transform: scale(1.06);
+            transition: 0.5s;
+        }
     }
-    // &:hover{
-    //     transform: scale(1.1);
-    //     transition: 0.5s;
-    // }
     .text{
         position: relative;
         top: -1em;

@@ -3,7 +3,10 @@ export const LOGOUT = "logout";
 export const UPDATE_USER = "update_user";
 export const LEFT_USER = "left_user";
 
-export const ADD_MOVIES = "ADD_MOVIES";
+export const FAVORITES = "favorites"
+export const ORDERS = "orders"
+
+export const ADD_MOVIES = "add_movies";
 
 export const ADD_CART = "add_cart";
 export const EDIT_CART = 'edit_cart';
