@@ -34,6 +34,8 @@
         flex-direction: column;
         width: 42em;
         height: 21em;
+        font-family: "SF Pro Display", -apple-system, acumin-pro, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: rgb(3, 12, 48);
     }
 
     .textD {
@@ -76,4 +78,13 @@
         margin-left: -11em;
         width: 21em;
     }
+
+.rent {
+    display: flex;
+    border: solid gray;
+    background: rgb(83, 83, 83);
+    height: 6em;
+    width: 26em;
+    top: -33em;
+}
 }
