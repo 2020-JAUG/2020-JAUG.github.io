@@ -36,11 +36,7 @@ const Profile = (props) => {
   if (props.credentials?.token) {
     return (
       <div className="baseProfile">
-        <div className="clientProfile">
           <div className="clientDates1">
-            <div className="clientLeftSide">
-              <h2>MY PROFILE</h2>
-            </div>
             <div className="clientRightSide">
               <p>NAME : {props.credentials?.user.name} </p>
               <p>EMAIL : {props.credentials?.user.email} </p>
@@ -48,11 +44,11 @@ const Profile = (props) => {
               <p>CITY : {props.credentials?.user.city}</p>
               <p>ADDRESS : {props.credentials?.user.address}</p>
               <p>CP : {props.credentials?.user.cp}</p>
-              <p>CREATECOUNT : {props.credentials?.user.createdAt}</p>
+              <p>CREATECOUNT : {props.credentials?.user.createdAt} </p>
               <div className="buttons">
                 <div
                   className="buttonUpdateC"
-                  onClick={() => history.push("/updateclient")}
+                  onClick={() => history.push("/updateuser")}
                 >
                   UPDATE
                 </div>
@@ -62,7 +58,6 @@ const Profile = (props) => {
                 <div className="botomMenuLateral"onClick={() => cambiaDatos("orders")}>Orders</div>
             </div>
           </div>
-        </div>
       </div>
     );
   } else {
