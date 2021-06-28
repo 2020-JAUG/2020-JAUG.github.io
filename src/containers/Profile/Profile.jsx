@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./Profile.scss";
 import { connect } from "react-redux";
 import spinner from "../../assets/spinner2.gif";
-import { FAVORITES } from "../../redux/types"
+import { FAVORITES, ORDERS } from "../../redux/types"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,7 +23,7 @@ const Profile = (props) => {
         break;
 
       case "orders":
-        props.dispatch({ type: FAVORITES, payload: info });
+        props.dispatch({ type: ORDERS, payload: info });
 
         break;
       default:
@@ -31,6 +31,11 @@ const Profile = (props) => {
         break;
     }
   };
+
+  const go  = () => {
+
+    history.push("/ordersuser");
+  }
 
 
   if (props.credentials?.token) {
@@ -53,9 +58,10 @@ const Profile = (props) => {
                   UPDATE
                 </div>
               </div>
-                <div className="botomMenuLateral"onClick={() => cambiaDatos("profile")}>Profile</div>
-                <div className="botomMenuLateral"onClick={() => cambiaDatos("favoritos")}>favorites</div>
-                <div className="botomMenuLateral"onClick={() => cambiaDatos("orders")}>Orders</div>
+                <div className="botomMenuLateral" onClick={() => cambiaDatos("profile")}>Profile</div>
+                <div className="botomMenuLateral" onClick={() => cambiaDatos("favoritos")}>favorites</div>
+                <div className="botomMenuLateral" onClick={() => cambiaDatos("orders")}>Orders</div>
+                <div className="botomMenuLateral" onClick={() => go()}>Orders 1</div>
             </div>
           </div>
       </div>
