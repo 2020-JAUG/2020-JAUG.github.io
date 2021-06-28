@@ -20,15 +20,15 @@
     cursor: pointer;
     transform: scale(1.1);
     transition: 0.3s;
+    text-decoration: none;
 }
-
 .headerLinks {
     width: 60%;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
     align-items: center;
-    /* outline: auto; */
+    // outline: auto;
 }
 
 .headerUser{
@@ -37,8 +37,8 @@
     justify-content: flex-end;
     flex-direction: row;
     align-items: center;
-}
 
+}
 .linkLogout {
     margin: 1em;
     transition: 0.2s;
@@ -46,6 +46,6 @@
 
 .linkLogout:hover{
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
     transition: 0.2s;
 }
