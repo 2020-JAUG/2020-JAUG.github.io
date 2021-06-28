@@ -16,7 +16,7 @@ const Detail = (props) => {
   const [datos,setDatos] = useState({
     token: props.credentials?.token,
     user: props.credentials?.user,
-    movieId: props.movies?.genre_ids,
+    movieId: props.movies?.id,
     movieTitle: props.movies?.original_title,
     moviePoster: props.movies?.poster_path,
     rentalDate: new Date(),
@@ -29,22 +29,22 @@ const Detail = (props) => {
   }
 
 
-
   const RentMovie = () => { setCard(true) }
 
   // let allStatements
   // if (state) {
   //   allStatements = <div>otra cosa</div>
   // }
+
   const Addroom = (props) => {
 
-  const order = async () => {
+    const order = async () => {
 
     let token = props.credentials?.token;
 
     // A continuamos, generamos el body de datos
     let body = {
-        user : datos.user,
+        userId : datos.user.id,
         movieId: datos.movieId,
         movieTitle: datos.movieTitle,
         moviePoster : datos.moviePoster,
@@ -52,21 +52,26 @@ const Detail = (props) => {
         returnDate: datos.returnDate
     }
 
-    // Envío por axios
-    console.log('body', body);
-    axios
-    .post("http://localhost:3001/orders", body, {headers:{'authorization':'Bearer ' + token}})
-    .then((res) => {
-        console.log('esto es res', res)
+      // Envío por axios
+      console.log('body', body);
+      axios
+      .post("http://localhost:3001/orders", body, {headers:{'authorization':'Bearer ' + token}})
+      .then((res) => {
+
+        setTimeout(()=>{
+          history.push("/profile");
+        },250)
 
         if(!res.data.user.isAdmin){
-            history.push('/user')
+          history.push('/user')
         } else {
             history.push('/admin')
         }
     })
-    .catch(() => {
+
+    .catch((err) => {
         console.log('Err');
+        //  console.log(err.response.data.message);
         // throw new Error('All fields are required');
 
     });
@@ -77,11 +82,11 @@ const Detail = (props) => {
         <div className="box1 rent">
 
             <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} />
-            <input className="input1" type="date" value={datos.renturnDate} name="renturnDate" onChange={updateCredentials} />
+            <input className="input1" type="date" value={datos.returnDate} name="returnDate" onChange={updateCredentials} />
 
             <button onClick={() => order()}>Send</button>
         </div>
-        <h2>{props.a}</h2>
+        {/* <h2>{props.a}</h2> */}
       </div>
     );
 }
