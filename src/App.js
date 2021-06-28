@@ -14,6 +14,7 @@ import Popular from './containers/Popular/Popular';
 import MoviesGenre from './containers/MoviesGenre/MoviesGenre';
 import RentMovie from './components/RentMovie/RentMovie.jsx';
 import UpdateUser from './containers/Profile/UpdateUser';
+import OrdersUser from './containers/Orders/OrdersUser.jsx';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path="/detail" exact component={Detail}/>
               <Route path="/moviesgenre" exact component={MoviesGenre}/>
               <Route path="/rentmovie" exact component={RentMovie}/>
+              <Route path="/ordersuser" exact component={OrdersUser}/>
             </Switch>
 
           </BrowserRouter>
