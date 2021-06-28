@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import Cart from "../../components/Cart/Cart";
+// import Cart from "../../components/Cart/Cart";
 import { ADD_MOVIES } from '../../redux/types';
 
 
@@ -11,14 +11,16 @@ const Detail = (props) => {
 
   let history = useHistory();
 
-  const [state, setState] = useState(false);
-  // const [datos,setDatos] = useState({date:'', date1:''});
+  const [card, setCard] = useState(false);
+
   const [datos,setDatos] = useState({
     token: props.credentials?.token,
     user: props.credentials?.user,
     movieId: props.movies?.genre_ids,
     movieTitle: props.movies?.original_title,
-    moviePoster: props.movies?.poster_path
+    moviePoster: props.movies?.poster_path,
+    rentalDate: new Date(),
+    returnDate: new Date()
 });
 
   // Esto es un Handler
@@ -27,7 +29,8 @@ const Detail = (props) => {
   }
 
 
-  const RentMovie = () => { setState(true) }
+
+  const RentMovie = () => { setCard(true) }
 
   // let allStatements
   // if (state) {
@@ -45,14 +48,14 @@ const Detail = (props) => {
         movieId: datos.movieId,
         movieTitle: datos.movieTitle,
         moviePoster : datos.moviePoster,
-        rentalDate: props.rentalDate,
-        returnDate: props.returnDate
+        rentalDate: datos.rentalDate,
+        returnDate: datos.returnDate
     }
 
     // Envío por axios
     console.log('body', body);
     axios
-    .post('http://localhost:3001/orders', body, {headers:{'authorization':'Bearer ' + token}})
+    .post("http://localhost:3001/orders", body, {headers:{'authorization':'Bearer ' + token}})
     .then((res) => {
         console.log('esto es res', res)
 
@@ -72,11 +75,10 @@ const Detail = (props) => {
     return (
       <div>
         <div className="box1 rent">
-            <form><p>Rental Day</p>
-            <input className="input1" name="rentalDate" type="date"   onChange={updateCredentials}  required/>
-            <p>Return Day</p>
-            <input className="input1" name="rentalDate2" type="date" onChange={updateCredentials}  required/>
-            </form>
+
+            <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} />
+            <input className="input1" type="date" value={datos.renturnDate} name="renturnDate" onChange={updateCredentials} />
+
             <button onClick={() => order()}>Send</button>
         </div>
         <h2>{props.a}</h2>
@@ -114,24 +116,24 @@ const Detail = (props) => {
           alt="backdrop_path"/>
           </div>
           <div className="contentSpan">
-            <div className="textD titleD">{props.movies.original_title} </div>
-            <div className="textD vote">Vote {props.movies.vote_average}</div>
-            <div className="textD">populatity{props.movies.popularity}</div>
-            <div className="textD">premiere{props.movies.release_date}</div>
-            <div className="textD">original language {props.movies.original_language}</div>
-            <div className="textD">Overview {props.movies.overview}</div>
+              <p className="titleD">{props.movies.original_title} </p>
+              <p className=" over">Overview {props.movies.overview}</p>
+              <p className=" vote">Vote {props.movies.vote_average}</p>
+              <p className=" popu">populatity{props.movies.popularity}</p>
+              <p className=" date">premiere{props.movies.release_date}</p>
+              <p className=" lang">original language {props.movies.original_language}</p>
             {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
           </div>
         </div>
 
-        <Cart />
+        {/* <Cart /> */}
 
-        <Link to={"/rent"} onClick={() => rent()}>Rent</Link>
+        {/* <Link to={"/rentmovie"} onClick={() => rent()}>Rent</Link> */}
 
-        <button onClick={() => RentMovie(!state)}> Rent Movie
+        <button onClick={() => RentMovie(!card)}> Rent Movie
           {/* {allStatements} */}
         </button>
-        {state ? <Addroom a={state} /> : <HomePage h={state} />}
+        {card ? <Addroom a={card} /> : <HomePage h={card} />}
 
         <div className="arrows">
           <Link className="" to={"/upcoming"}>
