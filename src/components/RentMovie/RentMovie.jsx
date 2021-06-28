@@ -96,6 +96,7 @@ const RentMovie = (props) => {
 
         return (
             <div>
+            <h1>Rent Movie.jsx</h1>
             <div className="box1">
                 <div className="errorsText">{msgError}</div>
                     <form className="form1">
