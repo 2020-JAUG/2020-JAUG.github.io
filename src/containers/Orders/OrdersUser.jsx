@@ -60,9 +60,11 @@ const OrdersUser = (props) => {
                         src={`${baseImgUrl}/${size}${order.moviePoster}`}
                         alt="poster"
                         />
-                        <p className="order"> Movie : {order.movieTitle} </p>
-                        <p className="order"> Rental Date : {order.rentalDate} </p>
-                        <p className="order"> Return Date : {order.returnDate} </p>
+                        <div className="info">
+                            <p className="order"> Rental Date : {order.rentalDate} </p>
+                            <p className="order"> Return Date : {order.returnDate} </p>
+                        </div>
+
                         <div className="buttons1">
                         {/* <div
                             className="buttonUpdateA"
