@@ -48,21 +48,21 @@ const OrdersUser = (props) => {
     if (orders[0]?.id) {
 
         return (
-            <div className="findAppointments">
+            <div className="allOrders">
 
-            <div className="appointmentContent">
+            <div className="orderContent">
 
                 {orders.map((order, index) => (
 
-                    <div key={index} className="appointmentCards">
+                    <div key={index} className="orderCards">
 
                         <img
                         src={`${baseImgUrl}/${size}${order.moviePoster}`}
                         alt="poster"
                         />
-                        <p> Movie : {order.movieTitle} </p>
-                        <p> Rental Date : {order.rentalDate} </p>
-                        <p> Return Date : {order.returnDate} </p>
+                        <p className="order"> Movie : {order.movieTitle} </p>
+                        <p className="order"> Rental Date : {order.rentalDate} </p>
+                        <p className="order"> Return Date : {order.returnDate} </p>
                         <div className="buttons1">
                         {/* <div
                             className="buttonUpdateA"
