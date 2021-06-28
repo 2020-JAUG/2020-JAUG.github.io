@@ -8,7 +8,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // top: 4em;
     width: 100vw;
     height: 100vh;
 
@@ -23,8 +22,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
-        width: 87.6em;
+        width: 88em;
         height: 35em;
         // overflow: scroll;
     }
@@ -32,39 +30,46 @@
     .contentSpan {
         display: flex;
         flex-direction: column;
-        width: 42em;
-        height: 21em;
-        font-family: "SF Pro Display", -apple-system, acumin-pro, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        color: rgb(3, 12, 48);
-    }
-
-    .textD {
-        display: flex;
-        height: 20em;
-        width: 46em;
-        justify-content: center;
-        border: solid rgba(128, 128, 128, 0) 0.2em;
-        padding-left: 4em;
-        line-height: 1.5;
-        color: rgb(0, 0, 0);
+        width: 59em;
+        margin-top: -11em;
+        height: 29em;
+        margin-top: 1em;
+        border: solid rgb(226, 12, 12);
     }
 
     .titleD {
-        position: relative;
-        width: 20em;
-        justify-content: center;
-        right: 6em;
+        display: flex;
+        margin-left: 1em;
+        margin-top: auto;
+        margin-bottom: 20em;
         font-size: 1.4em;
-        top: -2em;
+        width: 15em;
+        border: solid gray;
     }
     .vote {
+        display: flex;
         color: black;
         font-size: 1em;
-        height: 11em;
-        text-align: center;
-        width: 6em;
+        margin-top: -33em;
+        height: 6em;
+        width: 12em;
         border-radius: 50%;
         background: green;
+        border: solid gray;
+    }
+    .over{
+        display: flex;
+        margin-left: 12em;
+        margin-bottom: 22em;
+        border: solid rgb(21, 170, 53);
+        display: flex;
+        height: 22em;
+        width: 46em;
+        // justify-content: center;
+        border: solid rgba(128, 128, 128, 0) 0.2em;
+        padding-left: 9em;
+        margin-top: -27em;
+        line-height: 2.5;
     }
     .arrows {
         display: flex;
@@ -75,16 +80,20 @@
 
     .imagenD {
         display: flex;
-        margin-left: -11em;
+        margin-left: -16em;
         width: 21em;
     }
+    .back_img {
+        width: 84em;
+        height: 35em;
+    }
 
-.rent {
-    display: flex;
-    border: solid gray;
-    background: rgb(83, 83, 83);
-    height: 6em;
-    width: 26em;
-    top: -33em;
-}
+    .rent {
+        display: flex;
+        border: solid gray;
+        background: rgb(83, 83, 83);
+        height: 6em;
+        width: 26em;
+        top: 1em;
+    }
 }
