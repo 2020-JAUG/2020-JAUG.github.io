@@ -69,7 +69,6 @@ const UpdateUser = (props) => {
 
             props.dispatch({type:UPDATE_USER, payload:res.data});
 
-
             setTimeout(()=>{
                 history.push('/profile');
             },750);
