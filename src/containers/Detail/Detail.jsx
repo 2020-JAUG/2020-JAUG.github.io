@@ -36,7 +36,7 @@ const Detail = (props) => {
   //   allStatements = <div>otra cosa</div>
   // }
 
-  const Addroom = (props) => {
+  const Addroom = () => {
 
     const order = async () => {
 
@@ -53,7 +53,6 @@ const Detail = (props) => {
     }
 
       // Envío por axios
-      console.log('body', body);
       axios
       .post("http://localhost:3001/orders", body, {headers:{'authorization':'Bearer ' + token}})
       .then((res) => {
@@ -68,14 +67,10 @@ const Detail = (props) => {
             history.push('/admin')
         }
     })
-
     .catch((err) => {
-      console.log(err.response.data.message);
-
+      // console.log(err.response.data.message);
         console.log('Err');
         //  console.log(err.response.data.message);
-        // throw new Error('All fields are required');
-
     });
 }
 
