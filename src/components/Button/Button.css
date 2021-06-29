@@ -5,6 +5,6 @@
 
 .button:hover{
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
     transition: 0.2s;
 }

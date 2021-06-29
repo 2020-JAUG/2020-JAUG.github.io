@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./Profile.scss";
 import { connect } from "react-redux";
 import spinner from "../../assets/spinner2.gif";
-import { FAVORITES } from "../../redux/types"
+import { FAVORITES, ORDERS } from "../../redux/types"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,7 +23,7 @@ const Profile = (props) => {
         break;
 
       case "orders":
-        props.dispatch({ type: FAVORITES, payload: info });
+        props.dispatch({ type: ORDERS, payload: info });
 
         break;
       default:
@@ -32,15 +32,16 @@ const Profile = (props) => {
     }
   };
 
+  const go  = () => {
+
+    history.push("/ordersuser");
+  }
+
 
   if (props.credentials?.token) {
     return (
       <div className="baseProfile">
-        <div className="clientProfile">
           <div className="clientDates1">
-            <div className="clientLeftSide">
-              <h2>MY PROFILE</h2>
-            </div>
             <div className="clientRightSide">
               <p>NAME : {props.credentials?.user.name} </p>
               <p>EMAIL : {props.credentials?.user.email} </p>
@@ -48,21 +49,21 @@ const Profile = (props) => {
               <p>CITY : {props.credentials?.user.city}</p>
               <p>ADDRESS : {props.credentials?.user.address}</p>
               <p>CP : {props.credentials?.user.cp}</p>
-              <p>CREATECOUNT : {props.credentials?.user.createdAt}</p>
+              <p>CREATECOUNT : {props.credentials?.user.createdAt} </p>
               <div className="buttons">
                 <div
                   className="buttonUpdateC"
-                  onClick={() => history.push("/updateclient")}
+                  onClick={() => history.push("/updateuser")}
                 >
                   UPDATE
                 </div>
               </div>
-                <div className="botomMenuLateral"onClick={() => cambiaDatos("profile")}>Profile</div>
-                <div className="botomMenuLateral"onClick={() => cambiaDatos("favoritos")}>favorites</div>
-                <div className="botomMenuLateral"onClick={() => cambiaDatos("orders")}>Orders</div>
+                <div className="botomMenuLateral" onClick={() => cambiaDatos("profile")}>Profile</div>
+                <div className="botomMenuLateral" onClick={() => cambiaDatos("favoritos")}>favorites</div>
+                <div className="botomMenuLateral" onClick={() => cambiaDatos("orders")}>Orders</div>
+                <div className="botomMenuLateral" onClick={() => go()}>Orders 1</div>
             </div>
           </div>
-        </div>
       </div>
     );
   } else {
