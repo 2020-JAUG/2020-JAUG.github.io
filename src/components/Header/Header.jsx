@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';
 import Search from '../../components/Search/Search.jsx';
+import MovieQuery from '../Movies/MovieQuery';
 
 
 const Header = (props) => {
@@ -31,6 +32,7 @@ const Header = (props) => {
 
             <div className="headerUser">
                 <Search />
+                <MovieQuery />
                 <Button path="/profile" destination={props.credentials?.user.name}/>
                 <p>|</p>
                 <div className="linkLogout" onClick={() => logOut()}>LOGOUT</div>
