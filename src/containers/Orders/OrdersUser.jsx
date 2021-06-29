@@ -20,11 +20,9 @@ const OrdersUser = (props) => {
     const findOrders = () => {
 
         let token = props.credentials?.token;
-
         let body = {
             id : datos.user.id,
         }
-
 
         axios
         .post("http://localhost:3001/orders/orderById", body, {headers:{'authorization':'Bearer ' + token}})
@@ -38,7 +36,6 @@ const OrdersUser = (props) => {
         .catch((err) => {
             console.log('Err');
             //  console.log(err.response.data.message);
-            // throw new Error('All fields are required');
         });
     }
 
