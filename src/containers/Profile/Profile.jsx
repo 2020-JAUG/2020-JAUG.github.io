@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import "./Profile.scss";
 import { connect } from "react-redux";
 import spinner from "../../assets/spinner2.gif";
-import { FAVORITES, ORDERS } from "../../redux/types"
+import { FAVORITES, ORDERS } from "../../redux/types";
+import moment from "moment";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -49,7 +50,7 @@ const Profile = (props) => {
               <p>CITY : {props.credentials?.user.city}</p>
               <p>ADDRESS : {props.credentials?.user.address}</p>
               <p>CP : {props.credentials?.user.cp}</p>
-              <p>CREATECOUNT : {props.credentials?.user.createdAt} </p>
+              <p>CREATECOUNT : {moment (props.credentials?.user.createdAt).format('LL')} </p>{/*Con 3 LLL te muestra la hora*/}
               <div className="buttons">
                 <div
                   className="buttonUpdateC"

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import spinner from '../../assets/spinner2.gif'
 import { ORDERS } from '../../redux/types';
+import moment, { isMoment } from 'moment';
 
 const OrdersUser = (props) => {
 
@@ -58,8 +59,8 @@ const OrdersUser = (props) => {
                         alt="poster"
                         />
                         <div className="info">
-                            <p className="order"> Rental Date : {order.rentalDate} </p>
-                            <p className="order"> Return Date : {order.returnDate} </p>
+                            <p className="order"> Rental Date : { moment (order.rentalDate).format('LL')} </p>
+                            <p className="order"> Return Date : { moment (order.returnDate).format('LL')} </p>
                         </div>
 
                         <div className="buttons1">
