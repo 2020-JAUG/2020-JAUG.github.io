@@ -10,6 +10,8 @@ const UpdateUser = (props) => {
  let history = useHistory();
 
     const [updateInfo, setUpdateInfo] = useState({
+        token: props.credentials?.token,
+        user: props.credentials?.user,
         name : props.credentials?.user.name,
         email: props.credentials?.user.email,
         phone : props.credentials?.user.phone,
@@ -52,11 +54,11 @@ const UpdateUser = (props) => {
         try {
 
             let token = props.credentials?.token;
-            let user = props.credentials?.user;
+            // let user = props.credentials?.user;
 
             let body = {
 
-                user: user.id,
+                id : updateInfo.user.id,
                 name: updateInfo.name,
                 email: updateInfo.email,
                 phone: updateInfo.phone,
@@ -73,7 +75,8 @@ const UpdateUser = (props) => {
                 history.push('/profile');
             },750);
 
-        } catch {
+        } catch(err) {
+            // console.log(err.response.data.message);
             setErrors({...errors, eValidate: 'Could not be completed., please try again'});
         }
 
@@ -84,12 +87,12 @@ const UpdateUser = (props) => {
        try{
 
             let token = props.credentials?.token;
-            let user = props.credentials?.user;
-            let body = {
-                user: user.id,
-                oldPassword : passwords.oldPassword,
-                newPassword : passwords.newPassword
 
+            let body = {
+                userId : updateInfo.user.id,
+                oldPassword : passwords.oldPassword,
+                newPassword : passwords.newPassword,
+                newPassword2 : passwords.newPassword2,
             }
             let res = await axios.put('http://localhost:3001/users/updatepassword', body, {headers:{'authorization':'Bearer ' + token}});
             setTimeout(()=>{
@@ -99,7 +102,8 @@ const UpdateUser = (props) => {
                 history.push('/profile');
             },750);
 
-       } catch {
+       } catch(err) {
+            console.log(err.response.data.message);
            setErrors({...errors, eValidate: 'Wrong password, please try again'});
        }
 
