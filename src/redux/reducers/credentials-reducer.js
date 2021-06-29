@@ -1,7 +1,7 @@
 import { LOGIN, LOGOUT, UPDATE_USER, LEFT_USER } from '../types';
 
 const initialState = {
-    client : {},
+    user : {},
     admin: {},
     token : ''
 };
@@ -16,16 +16,14 @@ const credentialsReducer = (state = initialState, action) => {
             return initialState;
 
         case UPDATE_USER:
-            return {...state, client: action.payload}
+            return {...state, user: action.payload}
 
         case LEFT_USER:
-            return {...state, dentist: action.payload}
+            return {...state, user: action.payload}
 
         default:
             return state
     }
-
-
 }
 
 export default credentialsReducer;
