@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 // import Cart from "../../components/Cart/Cart";
 import { ADD_MOVIES } from '../../redux/types';
+import moment from 'moment';
 
 
 const Detail = (props) => {
@@ -36,7 +37,7 @@ const Detail = (props) => {
   //   allStatements = <div>otra cosa</div>
   // }
 
-  const Addroom = (props) => {
+  const Addroom = () => {
 
     const order = async () => {
 
@@ -53,7 +54,6 @@ const Detail = (props) => {
     }
 
       // Envío por axios
-      console.log('body', body);
       axios
       .post("http://localhost:3001/orders", body, {headers:{'authorization':'Bearer ' + token}})
       .then((res) => {
@@ -68,14 +68,9 @@ const Detail = (props) => {
             history.push('/admin')
         }
     })
-
     .catch((err) => {
-      console.log(err.response.data.message);
-
+      // console.log(err.response.data.message);
         console.log('Err');
-        //  console.log(err.response.data.message);
-        // throw new Error('All fields are required');
-
     });
 }
 
@@ -126,9 +121,9 @@ const Detail = (props) => {
               <p className="titleD">{props.movies.original_title} </p>
               <p className=" over">Overview {props.movies.overview}</p>
               <p className=" vote">Vote {props.movies.vote_average}</p>
-              <p className=" popu">populatity{props.movies.popularity}</p>
-              <p className=" date">premiere{props.movies.release_date}</p>
-              <p className=" lang">original language {props.movies.original_language}</p>
+              <p className=" popu">Populatity{props.movies.popularity}</p>
+              <p className=" date">Premiere { moment (props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
+              <p className=" lang">Original language {props.movies.original_language}</p>
             {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
           </div>
         </div>
