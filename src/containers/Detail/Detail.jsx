@@ -70,6 +70,8 @@ const Detail = (props) => {
     })
 
     .catch((err) => {
+      console.log(err.response.data.message);
+
         console.log('Err');
         //  console.log(err.response.data.message);
         // throw new Error('All fields are required');
