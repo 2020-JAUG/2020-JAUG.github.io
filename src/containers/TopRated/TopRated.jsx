@@ -16,8 +16,10 @@ const TopRated = (props) => {
     //Equivalente a componentDidMount en componentes de Clase
     useEffect(() =>{
         topRated();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=> {
 
         if(page !== oldpage){
@@ -70,13 +72,13 @@ const TopRated = (props) => {
 
   if (rated[0]?.id) {
     return (
-      <div className="allContent">
+      <div className="container">
                 <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
                 <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
-        <div className="movieContent">
+        <div className="movieTitle">
           {rated.map((movie, index) => (
-            <div className="content" onClick={() => clickHandler(movie)}>
-              <div className="content2" key={index}>
+            <div className="content" key={index} onClick={() => clickHandler(movie)}>
+              <div className="content22" >
                 <p className="text">{movie.title} </p>
                 <img
                   src={`${baseImgUrl}/${size}${movie.poster_path}`}
