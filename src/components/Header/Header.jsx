@@ -54,6 +54,7 @@ const Header = (props) => {
                 </div>
 
                 <div className="headerUser">
+                    <MovieQuery />
                     <Button path="/login" destination="LOGIN"/>
                     <p>|</p>
                     <Button path="/register" destination="REGISTER"/>
