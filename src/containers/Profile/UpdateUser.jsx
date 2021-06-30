@@ -207,10 +207,10 @@ const UpdateUser = (props) => {
                 <h3 className="titleUpdate">Update your info</h3>
 
                 <div className="errorsText">{errors.eName}</div>
-                <form className="form">
-                    <input type="text" name="name" placeholder={props.credentials?.user.name} onBlur={()=>checkError("name")} onChange={updateInfoClient} required/>
-                    <label className="lbl-nombre">
-                      <span className="text-nomb">Nombre</span>
+                <form className="form ">
+                    <input className="update1" type="text" name="name" placeholder={props.credentials?.user.name} onBlur={()=>checkError("name")} onChange={updateInfoClient} required/>
+                    <label className="lbl-nombre ">
+                      <span className="text-nomb ">Nombre</span>
                     </label>
                 </form>
                 <div className="errorsText">{errors.eEmail}</div>
