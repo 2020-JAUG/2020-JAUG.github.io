@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import spinner from '../../assets/spinner2.gif'
 import { ORDERS } from '../../redux/types';
-import moment, { isMoment } from 'moment';
+import moment  from 'moment';
 
 const OrdersUser = (props) => {
 
@@ -81,7 +80,7 @@ const OrdersUser = (props) => {
             return (
               <div className="spinnerContainer">
                 <div className="spinner">
-                   <img  src={spinner} alt="spinner" width="60" />
+                   <h1 className="allContent">No tienes pedidos</h1>
                 </div>
               </div>
             );
