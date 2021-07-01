@@ -11,7 +11,6 @@ const MoviesQuery = (props) => {
         name: "",
     });
 
-
     useEffect(() => {
         findTitle();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -21,13 +20,6 @@ const MoviesQuery = (props) => {
      const updateDatos = (e) => {
         setMovie({...movie, [e.target.name]: e.target.value})
     }
-
-    const clickHandler = (detail) => {
-
-        props.dispatch({ type: ADD_MOVIES, payload: detail });
-        history.push("/detail");
-    };
-
 
     const findTitle = async () => {
 
@@ -49,38 +41,15 @@ const MoviesQuery = (props) => {
         });
     }
 
-    const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200"
+        return (
 
-    if (movie[0]?.id) {
-        return (
-            <div className="allContent">
-                <div className="movieImage">
-                    <div className="fondoIMage"></div>
-                </div>
-                <div className="movieContent" >
-                    {props.movies.map((movie, index) => (
-                        <div className="content" key={index} onClick={() => clickHandler(movie)}>
-                            <div className="content2" >
-                                <p className="text">{movie.title} </p>
-                                <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster"/>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        )
-    } else {
-        return (
             <div className="spinnerContainer">
                 <div className="spinner">
-                    {/* <img  src={spinner} alt="spinner" width="60" /> */}
                     <input className="option" type="text" id="title" name="name"  onChange={updateDatos}/>
                     <button className="sendButton" name="movie" onClick={() => findTitle()}>Find</button>
                 </div>
             </div>
-        );
-    }
+    );
 };
 export default connect((state) => ({
     credentials: state.credentials,
