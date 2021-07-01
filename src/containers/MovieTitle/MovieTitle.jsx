@@ -11,7 +11,7 @@ const MovieTitle = (props) => {
     const [, setMovieTitle] = useState([]);
 
     //Equivalente a componentDidMount en componentes de Clase
-    useEffect(() =>{
+    useEffect(() => {
       setMovieTitle(props.movies);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
@@ -24,7 +24,6 @@ const MovieTitle = (props) => {
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 
-
     if (props.movies[0]?.id) {
 
         return (
@@ -32,12 +31,12 @@ const MovieTitle = (props) => {
                 <div className="movieContent" >
                 {props.movies.map((movies, index) => (
 
-                        <div className="content" >
-                            <div className="content2" key={index} onClick={() => detail(movies)} >
-                                <p className="text">{movies.title} </p>
-                                <img src={`${baseImgUrl}/${size}${movies.poster_path}`} alt="poster"/>
-                            </div>
-                        </div>
+                  <div className="content" >
+                    <div className="content2" key={index} onClick={() => detail(movies)} >
+                      <p className="text">{movies.title} </p>
+                      <img src={`${baseImgUrl}/${size}${movies.poster_path}`} alt="poster"/>
+                    </div>
+                  </div>
                 ))}
                 </div>
             </div>
@@ -45,10 +44,7 @@ const MovieTitle = (props) => {
     } else {
         return (
             <div className="spinnerContainer">
-                <div className="spinner">
-                <p>estoy en el spiner</p>
                     <img  src={spinner} alt="spinner" width="60" />
-                </div>
             </div>
         );
     }

@@ -7,9 +7,7 @@ import { useHistory } from 'react-router-dom';
 const MoviesQuery = (props) => {
 
     let history = useHistory();
-    const [movie, setMovie] = useState ({
-        name: "",
-    });
+    const [movie, setMovie] = useState ( { name: "" } );
 
     useEffect(() => {
         findTitle();
@@ -24,9 +22,7 @@ const MoviesQuery = (props) => {
     const findTitle = async () => {
 
         let query = document.getElementById("title").value;
-        let body = {
-            query: query,
-        }
+        let body = { query: query, }
 
           axios
           .post("http://localhost:3001/movies/search", body)
@@ -40,16 +36,13 @@ const MoviesQuery = (props) => {
             return Error("Wrong user or password");
         });
     }
-
         return (
 
             <div className="spinnerContainer">
-                <div className="spinner">
-                    <input className="option" type="text" id="title" name="name"  onChange={updateDatos}/>
-                    <button className="sendButton" name="movie" onClick={() => findTitle()}>Find</button>
-                </div>
+                <input className="option" type="text" id="title" name="name"  onChange={updateDatos}/>
+                <button className="sendButton" name="movie" onClick={() => findTitle()}>Find</button>
             </div>
-    );
+        );
 };
 export default connect((state) => ({
     credentials: state.credentials,
