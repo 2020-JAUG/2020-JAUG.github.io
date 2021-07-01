@@ -34,16 +34,15 @@ const MoviesQuery = (props) => {
         let query = document.getElementById("title").value;
         let body = {
             query: query,
-            datos: movie.name
         }
 
           axios
           .post("http://localhost:3001/movies/search", body)
           .then((res) => {
 
-              props.dispatch({type:ADD_MOVIES, payload: res.data.results});
-
-              history.push('/moviesgenre');
+                props.dispatch({type:ADD_MOVIES, payload: res.data.results});
+                document.getElementById("title").value = "";
+                history.push('/moviesgenre');
           })
           .catch(() => {
             return Error("Wrong user or password");
