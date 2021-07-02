@@ -70,25 +70,22 @@ const Register = () => {
         .post("http://localhost:3001/users", body)
         .then((res) => {
             setDatosUser(res.data.results);
-            history.push("/login");
-            console.log('datos', res.data.results);
-        })
-        .catch((err) => {
-            // console.log(err.response.data.message);
+          })
+          .catch((err) => {
             var errorText = err.response.data.message;
+            console.log(errorText);
             if (errorText.includes("email")){
-                setError(JSON.stringify("El email ya esta registrado."));
+              setError(JSON.stringify("El email ya esta registrado."));
 
             } else if (errorText.includes("phone")){
-                setError(JSON.stringify("El telefono ya esta registrado."));
+              setError(JSON.stringify("El telefono ya esta registrado."));
             }else{
-                setError(JSON.stringify(err.response.data.message));
+              setError(JSON.stringify(err.response.data.message));
             }
             return Error("Files not Found");
-        });
+          });
+          // history.push("/login");
     // let res = await axios.post("http://localhost:3001/users", body);
-
-    // console.log( res.data.id);
   };
 
   const checkError = (arg) => {
