@@ -15,6 +15,7 @@ import MoviesGenre from './containers/MoviesGenre/MoviesGenre';
 import RentMovie from './components/RentMovie/RentMovie.jsx';
 import UpdateUser from './containers/Profile/UpdateUser';
 import OrdersUser from './containers/Orders/OrdersUser.jsx';
+import MovieTitle from './containers/MovieTitle/MovieTitle';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
               <Route path="/moviesgenre" exact component={MoviesGenre}/>
               <Route path="/rentmovie" exact component={RentMovie}/>
               <Route path="/ordersuser" exact component={OrdersUser}/>
+              <Route path="/movietitle" exact component={MovieTitle}/>
             </Switch>
 
           </BrowserRouter>
@@ -44,3 +46,6 @@ function App() {
 }
 
 export default App;
+
+// import {Input, notification} from 'antd';
+//  notification.success({message:'Usuario registrado.',description: "Te hemos enviado un email para activar la cuenta." });

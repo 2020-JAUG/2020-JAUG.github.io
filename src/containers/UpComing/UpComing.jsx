@@ -20,6 +20,7 @@ const UpComing = (props) => {
         //eslint-disable-next-line
     },[])
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=> {
 
         if(page !== oldpage){
@@ -85,8 +86,8 @@ const UpComing = (props) => {
 
                     {movies.map((movie, index) => (
 
-                        <div className="content" onClick={() => clickHandler(movie)}>
-                            <div className="content2" key={index} >
+                        <div className="content" key={index} onClick={() => clickHandler(movie)}>
+                            <div className="content2"  >
                                     <p className="text">{movie.title} </p>
                                     <img src={`${baseImgUrl}/${size}${movie.poster_path}`}  alt="poster"/>
                                     {/* <p className="text">{movie.popularity}</p> */}

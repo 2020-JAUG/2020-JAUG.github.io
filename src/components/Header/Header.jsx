@@ -37,10 +37,7 @@ const Header = (props) => {
                 <p>|</p>
                 <div className="linkLogout" onClick={() => logOut()}>LOGOUT</div>
             </div>
-
         </div>
-
-
     )} else {
 
         //Header visitor
@@ -54,6 +51,7 @@ const Header = (props) => {
                 </div>
 
                 <div className="headerUser">
+                    <MovieQuery />
                     <Button path="/login" destination="LOGIN"/>
                     <p>|</p>
                     <Button path="/register" destination="REGISTER"/>
@@ -68,5 +66,4 @@ const Header = (props) => {
 export default connect((state) => ({
 
     credentials:state.credentials
-
-    }))(Header);
+}))(Header);

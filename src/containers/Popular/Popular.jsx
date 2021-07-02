@@ -71,16 +71,14 @@ const Popular = (props) => {
   if (popular[0]?.id) {
     return (
       <div className="allContent">
-                <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
-                <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
-        <div className="movieImage">
-          <div className="fondoIMage"></div>
-        </div>
+
+          <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
+          <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
 
         <div className="movieContent">
           {popular.map((movie, index) => (
-            <div className="content" onClick={() => clickHandler(movie)}>
-              <div className="content2" key={index}>
+            <div className="content" key={index} onClick={() => clickHandler(movie)}>
+              <div className="content2" >
                 <p className="text">{movie.title} </p>
                 <img
                   src={`${baseImgUrl}/${size}${movie.poster_path}`}

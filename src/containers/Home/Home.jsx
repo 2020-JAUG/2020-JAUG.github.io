@@ -1,38 +1,112 @@
-import React from 'react';
-import {useHistory} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { connect } from 'react-redux';
+import { useHistory } from "react-router-dom";
+import { ADD_MOVIES } from "../../redux/types";
+import spinner from "../../assets/spinner2.gif";
+
 
 const Home = (props) => {
+  let history = useHistory();
 
-    let history = useHistory();
+  const [, setRecommendations] = useState([]);
+  const [page, setPage] = useState(1);
+  const [oldpage, setOldPage] = useState(1);
 
-    // const goTo = (path) => {
+  const baseImgUrl = "https://image.tmdb.org/t/p";
+  const size = "w200";
 
-    //     history.push(path);
+  useEffect(() => {
+    setTimeout(() => {
+      recommendations();
+    }, 250);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    // }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(()=> {
 
-    if(props.credentials.user?.name){
-
-        return(
-            <div className="homeContainer">
-
-                <h1>SOY HOME</h1>
-            </div>
-        )
+    if(page !== oldpage){
+      setOldPage(page);
+      recommendations();
     }
 
-    else {
+});
+  const changePage = (operacion) => {
 
-        return(
-            <div>PRUEBA</div>
-        )
+    if(operacion === "+"){
+
+      //Cambiamos la página
+      let newPage = page + 1;
+
+      setOldPage(page);
+      setPage(newPage);
+
+    } else if (operacion === "-" && page > 1) {
+
+      let newPage = page - 1;
+      setOldPage(page);
+      setPage(newPage);
     }
-
 }
 
+
+  const recommendations = async () => {
+    try {
+      let res = await axios.get(
+        (`https://api.themoviedb.org/3/discover/movie?with_cast=31&sort_by=release_date.asc&api_key=79a61f5dc13e3e9e4834fadbf4f326c7&page=${page}`)
+      );
+      setRecommendations(res.data.results);
+
+      props.dispatch({ type: ADD_MOVIES , payload: res.data.results });
+      console.log(res.data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const clickHandler = async (movie) => {
+        try{
+
+            props.dispatch({type:ADD_MOVIES, payload: movie});
+            history.push('/detail');
+        }catch (err){
+            console.log(err);
+        }
+  }
+
+  if (props.movies[0]?.id) {
+    return (
+        <div className="allContent">
+            <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
+            <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
+            <div className="movieImage">
+                <div className="fondoIMage"></div>
+            </div>
+            <div className="movieContent" >
+                {props.movies.map((movie, index) => (
+                    <div className="content" key={index} onClick={() => clickHandler(movie)}>
+                        <div className="content2" >
+                            <p className="text">{movie.title} </p>
+                            <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster"/>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+} else {
+    return (
+        <div className="spinnerContainer">
+            <div className="spinner">
+                <img  src={spinner} alt="spinner" width="60" />
+            </div>
+        </div>
+    );
+}
+};
+
 export default connect((state) => ({
-
-    credentials:state.credentials
-
-    }))(Home);
+    credentials: state.credentials,
+    movies: state.movies
+}))(Home);

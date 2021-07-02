@@ -8,7 +8,7 @@ const MoviesGenre = (props) => {
 
     let history = useHistory();
 
-    const [comedy, setMovie] = useState ([]);
+    const [, setMovie] = useState ([]);
     const [page, setPage] = useState(1);
     const [oldpage, setOldPage] = useState(1);
 
@@ -18,7 +18,7 @@ const MoviesGenre = (props) => {
 
         props.dispatch({ type: ADD_MOVIES, payload: detail });
         history.push("/detail");
-      };
+    };
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
       useEffect(()=> {

@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import "../../Global.css";
+import { useHistory } from "react-router";
 
 const Register = () => {
+
+  let history = useHistory();
   // Hook
   const [datosUser, setDatosUser] = useState({
     name: "",
@@ -35,6 +38,8 @@ const Register = () => {
     ePhone: "",
   });
 
+  const [, setError] = useState([]);
+
   useEffect(() => {}, []);
 
   useEffect(() => {});
@@ -61,9 +66,26 @@ const Register = () => {
     };
     console.log("body", body);
 
-    let res = await axios.post("http://localhost:3001/users", body);
+    axios
+        .post("http://localhost:3001/users", body)
+        .then((res) => {
+            setDatosUser(res.data.results);
+          })
+          .catch((err) => {
+            var errorText = err.response.data.message;
+            console.log(errorText);
+            if (errorText.includes("email")){
+              setError(JSON.stringify("El email ya esta registrado."));
 
-    // console.log( res.data.id);
+            } else if (errorText.includes("phone")){
+              setError(JSON.stringify("El telefono ya esta registrado."));
+            }else{
+              setError(JSON.stringify(err.response.data.message));
+            }
+            return Error("Files not Found");
+          });
+          // history.push("/login");
+    // let res = await axios.post("http://localhost:3001/users", body);
   };
 
   const checkError = (arg) => {
@@ -115,7 +137,7 @@ const Register = () => {
       case "phone":
         if (
           !/^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm.test(
-            datosUser.phone
+            datosUser.phone.length
           ) ||
           datosUser.phone.length > 16
         ) {

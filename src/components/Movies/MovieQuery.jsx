@@ -1,60 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
-import axios from 'axios';
 import { ADD_MOVIES } from '../../redux/types';
-import { useHistory } from 'react-router';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
-
-const MovieQuery = (props) => {
+const MoviesQuery = (props) => {
 
     let history = useHistory();
+    const [movie, setMovie] = useState ( { name: "" } );
 
-    const [querys, setQuerys] = useState ([]);
+    useEffect(() => {
+        findTitle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
 
-     // Esto es un Handler
+    // Esto es un Handler
      const updateDatos = (e) => {
-        setQuerys({...querys, [e.target.name]: e.target.value})
+        setMovie({...movie, [e.target.name]: e.target.value})
     }
 
-    const query = async (props) => {
+    const findTitle = async () => {
 
         let query = document.getElementById("title").value;
-        let body = {
-            query: query
-        }
+        let body = { query: query, }
 
-        axios
-        .post("http://localhost:3001/movies/search", body)
-        .then((res) => {
-            setQuerys(res.data.results);
-            history.push("/detail");
-            console.log('datos', res.data.results);
-            //Guardo en RDX
-            props.dispatch({type:ADD_MOVIES, payload: res.data.results});
-        })
-        .catch((err) => {
-            // console.log(err.response.data.message);
-            return Error("Files not Found");
+          axios
+          .post("http://localhost:3001/movies/search", body)
+          .then((res) => {
+
+                props.dispatch({type:ADD_MOVIES, payload: res.data.results});
+                document.getElementById("title").value = "";
+                history.push('/moviesgenre');
+          })
+          .catch(() => {
+            return Error("Wrong user or password");
         });
     }
-
-    if(props.credentials?.token) {
-
         return (
 
-            <div>
-                <input className="option" type="text" id="title"  onChange={updateDatos}/>
-                <button className="sendButton" name="movie" onClick={() => query()}>Find</button>
-          </div>
-        )
-    } else {
-        return(
-            <div></div>
-        )
-    }
-}
-
+            <div className="spinnerContainer">
+                <input className="option" type="text" id="title" name="name"  onChange={updateDatos}/>
+                <button className="sendButton" name="movie" onClick={() => findTitle()}>Find</button>
+            </div>
+        );
+};
 export default connect((state) => ({
-    credentials:state.credentials,
-    movies: state.movies,
-}))(MovieQuery);
+    credentials: state.credentials,
+    movies: state.movies
+}))(MoviesQuery);
