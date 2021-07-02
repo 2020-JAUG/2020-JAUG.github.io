@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import  spinner  from "../../assets/spinner2.gif";
 
 const MoviesGenre = (props) => {
 
@@ -97,10 +98,7 @@ const MoviesGenre = (props) => {
     } else {
         return (
             <div className="spinnerContainer">
-                <div className="spinner">
-                    {/* <img  src={spinner} alt="spinner" width="60" /> */}
-                    cargando...
-                </div>
+                <div className="spinner"><img  src={spinner} alt="spinner" width="60" /></div>
             </div>
         );
     }
