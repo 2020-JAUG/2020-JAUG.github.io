@@ -79,7 +79,7 @@ const Login = (props) => {
             props.dispatch({type:LOGIN,payload:res.data});
 
             if(!res.data.user.isAdmin){
-                history.push('/user')
+                history.push('/')
             } else {
                 history.push('/admin')
             }
