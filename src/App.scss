@@ -1,5 +1,4 @@
 
-@import 'containers/Detail/Detail.scss';
 @import './SCSS/variables.scss';
 @import 'containers/Home/Home.scss';
 @import './components/Header/Header.scss';
@@ -7,12 +6,13 @@
 @import 'containers/Register/Register.scss';
 @import 'containers/UpComing/UpComing.scss';
 @import 'containers/TopRated/TopRated.scss';
+@import 'containers/Popular/Popular.scss';
+@import 'containers/MoviesGenre/MoviesGenre.scss';
+@import 'containers/Detail/Detail.scss';
+@import './containers/MovieTitle/MovieTitle.scss';
 @import 'components/Search/Search.scss';
-@import 'containers/Pages/Pages.scss';
-@import './components/RentMovie/RentMovie.scss';
 @import './containers/Profile/UpdateUser.scss';
 @import './containers/Orders/OrdersUser.scss';
-@import './containers/MovieTitle/MovieTitle.scss';
 
 /*
 html,
