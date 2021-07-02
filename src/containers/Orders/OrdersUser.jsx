@@ -7,7 +7,7 @@ import moment  from 'moment';
 const OrdersUser = (props) => {
 
     const [orders, setOrders] = useState([]);
-    const [datos,setDatos] = useState({
+    const [datos,] = useState({
         token: props.credentials?.token,
         user: props.credentials?.user,
     });
@@ -79,8 +79,8 @@ const OrdersUser = (props) => {
         } else {
             return (
               <div className="spinnerContainer">
-                <div className="spinner">
-                   <h1 className="allContent">No tienes pedidos</h1>
+                <div className="spinner notOrder">
+                   <h1>You have no orders</h1>
                 </div>
               </div>
             );
