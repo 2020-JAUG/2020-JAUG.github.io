@@ -4,12 +4,15 @@
 @import './components/Header/Header.scss';
 @import 'containers/login/Login.scss';
 @import 'containers/Register/Register.scss';
+
 @import 'containers/UpComing/UpComing.scss';
 @import 'containers/TopRated/TopRated.scss';
 @import 'containers/Popular/Popular.scss';
 @import 'containers/MoviesGenre/MoviesGenre.scss';
-@import 'containers/Detail/Detail.scss';
+@import './components/Movies/MovieQuery.scss';
+
 @import './containers/MovieTitle/MovieTitle.scss';
+@import 'containers/Detail/Detail.scss';
 @import 'components/Search/Search.scss';
 @import './containers/Profile/UpdateUser.scss';
 @import './containers/Orders/OrdersUser.scss';
