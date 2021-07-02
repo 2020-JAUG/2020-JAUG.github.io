@@ -361,10 +361,10 @@ const Register = () => {
             </label>
           </form>
         </div>
-        <div className="registerButton" onClick={() => applyRegister()}>
-          Enviar
-        </div>
       </div>
+        <div className="registerButton" onClick={() => applyRegister()}>
+          Send
+        </div>
     </div>
   );
 };
