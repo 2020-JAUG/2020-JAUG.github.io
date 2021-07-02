@@ -27,12 +27,12 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        width: 21em;
+        width: 22.2em;
         margin: 2em;
         padding: 2em;
-        border: 1.7px solid #6f6d6d;
         border-radius: 1em;
-        background-color:hsla(222, 8%, 68%, 0.529);
+        background-color: rgba(169,182,200,255);
+        border: 1.7px solid #6f6d6d;
         &:hover {
             opacity: 0.5;
             // transform: scale(1.06);
@@ -41,7 +41,12 @@
     }
     .text{
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         top: -1em;
         line-height: 1.5;
+        font-size: 1.3em;
+        width: fit-content;
     }
 }
