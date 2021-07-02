@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 // import Cart from "../../components/Cart/Cart";
 import moment from 'moment';
-
-
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowCircleLeft, faCartPlus, faFilm, faStar, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 const Detail = (props) => {
 
   let history = useHistory();
@@ -74,7 +74,7 @@ const Detail = (props) => {
             <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} />
             <input className="input1" type="date" value={datos.returnDate} name="returnDate" onChange={updateCredentials} />
 
-            <button onClick={() => order()}>Send</button>
+            <button className="button_rent" onClick={() => order()}>Send</button>
         </div>
         {/* <h2>{props.a}</h2> */}
       </div>
@@ -95,28 +95,49 @@ const Detail = (props) => {
   if ( props.movies?.id ) {
     return (
       <div className="contentDetail">
-        <div className="vistaDetail">
-          <div className="imagenD">
-            <img
-              src={`${baseImgUrl}/${size}${props.movies.poster_path}`}
-              alt="poster"
-            />
-          <img className="back_img" src={`${baseImgUrl}/${size_back_drop}${props.movies.backdrop_path}`}
-          alt="backdrop_path"/>
-          </div>
-          <div className="contentSpan">
-              <p className="titleD">{props.movies.original_title} </p>
-              <p className=" over">Overview {props.movies.overview}</p>
-              <p className=" vote">Vote {props.movies.vote_average}</p>
-              <p className=" popu">Populatity{props.movies.popularity}</p>
-              <p className=" date">Premiere { moment (props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
-              <p className=" lang">Original language {props.movies.original_language}</p>
-            {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
-          </div>
-        </div>
+  {/* <div className="iconDataMovie"><FontAwesomeIcon className="iconDataMovie" icon={faFilm}/></div> */}
 
-        <button className="button_rent" onClick={() => RentMovie(!card)}> Rent Movie </button>
-        {card ? <Addroom a={card} /> : <HomePage h={card} />}
+        <div className="vistaDetail">
+            <div className="imagenD">
+                <img
+                  src={`${baseImgUrl}/${size}${props.movies.poster_path}`}
+                  alt="poster"
+                />
+                <img className="back_img" src={`${baseImgUrl}/${size_back_drop}${props.movies.backdrop_path}`}
+              alt="backdrop_path"/>
+          </div>
+
+          <div className="contentSpan">
+              <div className="titleD">
+                <p>{props.movies.original_title} </p>
+              </div>
+          </div>
+
+          <div className="over">
+            <p>Overview {props.movies.overview}</p>
+          </div>
+
+          <div className="vote">
+                <p>Vote {props.movies.vote_average}</p>
+          </div>
+
+          <div className="popu">
+                <p>Populatity:  {props.movies.popularity}</p>
+          </div>
+
+          <div className="date popu">
+                <p>Premiere  { moment ( props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
+          </div>
+
+          </div>
+
+            {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
+
+
+
+
+          <button className="button_rent" onClick={() => RentMovie(!card)}> Rent Movie </button>
+          {card ? <Addroom a={card} /> : <HomePage h={card} />}
 
         <div className="arrows">
           <Link className="" to={"/upcoming"}>
@@ -125,7 +146,7 @@ const Detail = (props) => {
           <Link to={"/toprated"}>topRated</Link>
         </div>
       </div>
-    );
+  );
   } else {
     return <div>ESTOY CARGANDO!</div>;
   }
