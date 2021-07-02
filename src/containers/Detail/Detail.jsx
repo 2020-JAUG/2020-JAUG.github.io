@@ -94,7 +94,7 @@ const Detail = (props) => {
   const size_back_drop = "w1280";
   const size = "w300";
 
-  if ( props.movies?.id && props.credentials.id ) {
+  if ( props.credentials.user?.name) {
     return (
       <div className="contentDetail">
   {/* <div className="iconDataMovie"><FontAwesomeIcon className="iconDataMovie" icon={faFilm}/></div> */}
