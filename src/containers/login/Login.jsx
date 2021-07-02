@@ -91,10 +91,9 @@ const Login = (props) => {
     }
 
     return(
-        <div className="vistaLogin">
-                <div className="loginCard">
-
-                    <div className="box1">
+        <div className="vistaLogin2">
+                <div className="loginCard2">
+                    <div className="boxLogin">
                         <div className="errorsText">{msgError.eEmail}</div>
                         <form className="form1">
                             <input className="input1" name="email" type="text"  onChange={updateCredentials} onBlur={() => checkError ("email")} required/>
@@ -104,8 +103,8 @@ const Login = (props) => {
                         </form>
                     </div>
 
-                    <div className="box1">
-                        <div className="errorsText">{msgError.ePassword}</div>
+                    <div className="boxLogin2">
+                        <div className="errorsText login">{msgError.ePassword}</div>
                         <form className="form3">
                             <input className="input3" name="password" type="password" onChange={updateCredentials} onBlur={() => checkError("password")} required/>
                             <label className="lbl-nombre3">
@@ -114,9 +113,10 @@ const Login = (props) => {
                         </form>
                     </div>
 
-                    <div className="sendButton" onClick={()=>logeame()}>Login</div>
-                    <div>{msgError.eValidate}</div>
                 </div>
+
+                <div className="send_button" onClick={()=>logeame()}>Sing in</div>
+                <div>{msgError.eValidate}</div>
         </div>
         )
 }
