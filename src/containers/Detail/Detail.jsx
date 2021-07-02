@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 // import Cart from "../../components/Cart/Cart";
-import { ADD_MOVIES } from '../../redux/types';
 import moment from 'moment';
 
 
@@ -29,13 +28,7 @@ const Detail = (props) => {
     setDatos({...datos, [e.target.name]: e.target.value})
   }
 
-
   const RentMovie = () => { setCard(true) }
-
-  // let allStatements
-  // if (state) {
-  //   allStatements = <div>otra cosa</div>
-  // }
 
   const Addroom = () => {
 
@@ -99,13 +92,7 @@ const Detail = (props) => {
   const size_back_drop = "w1280";
   const size = "w300";
 
-  const rent = () => {
-
-    props.dispatch({type:ADD_MOVIES,payload: props.movies});
-  }
-
-
-  if (props.movies?.id && props.credentials?.user) {
+  if ( props.movies?.id ) {
     return (
       <div className="contentDetail">
         <div className="vistaDetail">
@@ -128,13 +115,7 @@ const Detail = (props) => {
           </div>
         </div>
 
-        {/* <Cart /> */}
-
-        {/* <Link to={"/rentmovie"} onClick={() => rent()}>Rent</Link> */}
-
-        <button onClick={() => RentMovie(!card)}> Rent Movie
-          {/* {allStatements} */}
-        </button>
+        <button className="button_rent" onClick={() => RentMovie(!card)}> Rent Movie </button>
         {card ? <Addroom a={card} /> : <HomePage h={card} />}
 
         <div className="arrows">
