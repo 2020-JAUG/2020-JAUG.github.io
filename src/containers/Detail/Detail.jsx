@@ -1,7 +1,8 @@
+/* eslint-disable no-lone-blocks */
 import React, { useState } from 'react'
 import { useHistory } from "react-router";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from 'axios';
 // import Cart from "../../components/Cart/Cart";
 import moment from 'moment';
@@ -12,6 +13,7 @@ const Detail = (props) => {
   let history = useHistory();
 
   const [card, setCard] = useState(false);
+
 
   const [datos,setDatos] = useState({
     token: props.credentials?.token,
@@ -28,7 +30,7 @@ const Detail = (props) => {
     setDatos({...datos, [e.target.name]: e.target.value})
   }
 
-  const RentMovie = () => { setCard(true) }
+  const RentMovie = () => { setCard(true)}
 
   const Addroom = () => {
 
@@ -69,13 +71,13 @@ const Detail = (props) => {
 
     return (
       <div>
-        <div className="box1 rent">
+        <div className="takeDate">
 
             <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} />
             <input className="input1" type="date" value={datos.returnDate} name="returnDate" onChange={updateCredentials} />
 
-            <button className="button_rent" onClick={() => order()}>Send</button>
         </div>
+            <button className="button_rent2" id="send_" onClick={() => order()}>Send</button>
         {/* <h2>{props.a}</h2> */}
       </div>
     );
@@ -92,7 +94,7 @@ const Detail = (props) => {
   const size_back_drop = "w1280";
   const size = "w300";
 
-  if ( props.movies?.id ) {
+  if ( props.movies?.id && props.credentials.id ) {
     return (
       <div className="contentDetail">
   {/* <div className="iconDataMovie"><FontAwesomeIcon className="iconDataMovie" icon={faFilm}/></div> */}
@@ -128,28 +130,27 @@ const Detail = (props) => {
           <div className="date popu">
                 <p>Premiere  { moment ( props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
           </div>
-
           </div>
 
-            {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
-
-
-
-
-          <button className="button_rent" onClick={() => RentMovie(!card)}> Rent Movie </button>
+          <button className="button_rent"   onClick={() => RentMovie(!card)}> Rent Movie </button>
           {card ? <Addroom a={card} /> : <HomePage h={card} />}
 
-        <div className="arrows">
-          <Link className="" to={"/upcoming"}>
+
+        {/* <div className="arrows">
+          <Link className="" to={"/"}>
             Go Back
           </Link>
           <Link to={"/toprated"}>topRated</Link>
-        </div>
+        </div> */}
       </div>
   );
   } else {
-    return <div>ESTOY CARGANDO!</div>;
-  }
+    return(
+
+      <div className="baseProfile singUp">
+        <div className="clientRightSide" onClick={() => history.push('/register')}> Sign up to rent a movie</div>
+      </div>
+    )}
 };
 
 export default connect((state) => ({
