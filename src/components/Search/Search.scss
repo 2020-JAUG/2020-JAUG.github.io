@@ -6,6 +6,7 @@
 
 .drop_down {
     display: flex;
-    min-width: 400px;
-    border: solid gray;
+    flex-direction: row;
+    // min-width: 400px;
+    margin-right: 9em;
 }

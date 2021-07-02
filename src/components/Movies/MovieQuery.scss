@@ -3,16 +3,22 @@
     padding: 0;
     box-sizing: border-box
 }
-
-.spinnerContainer {
-    width: 100vw;
-    height: 100vh;
+.bottonHeader{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    .spinner {
-        display: flex;
-    }
+    cursor: pointer;
+    border: 1.9px solid rgb(104, 104, 104);
+    color: #3b3b3d;
+    border-radius: 0.7em;
+    background-color: rgba(235,234,234,255);
+    height: 2em;
+    width: 5em;
+    margin-right: 4em;
+}
+.input {
+    display: flex;
+    gap: 7em;
+    flex-direction: row;
 }
