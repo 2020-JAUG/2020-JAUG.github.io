@@ -5,6 +5,9 @@ import axios from 'axios';
 import { ADD_MOVIES } from '../../redux/types';
 import { connect } from 'react-redux';
 import spinner from '../../assets/spinner2.gif';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const UpComing = (props) => {
 
@@ -78,10 +81,6 @@ const UpComing = (props) => {
                     <div className="fondoIMage"></div>
                 </div>
 
-                <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
-                <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
-
-
                 <div className="movieContent">
 
                     {movies.map((movie, index) => (
@@ -90,18 +89,14 @@ const UpComing = (props) => {
                             <div className="content2"  >
                                     <p className="text">{movie.title} </p>
                                     <img src={`${baseImgUrl}/${size}${movie.poster_path}`}  alt="poster"/>
-                                    {/* <p className="text">{movie.popularity}</p> */}
-                                    {/* <p className="text">{movie.release_date}</p>
-                                    {/* <p className="text">{movie.vote_average}</p>
-                                    {/* <p className="text">{movie.genre_id}</p>
-                                    {/* <p className="text">{movie.overview}</p> */}
-                                    {/* <p className="text">{movie.getSimilarMovies}</p>
-                                {/* <div className="enviar" onClick={() => llevame()}></div> */}
-
-
                             </div>
                         </div>
                     ))}
+
+                    <div className="left" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div>
+                    <div className="left2" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div>
+                    <div className="right" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+                    <div className="right2" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
                 </div>
             </div>
 
@@ -122,5 +117,4 @@ export default connect((state) => ({
 
     credentials:state.credentials,
     movies: state.movies
-
 }))(UpComing);
