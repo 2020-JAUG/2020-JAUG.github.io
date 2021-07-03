@@ -44,7 +44,7 @@ const Profile = (props) => {
       <div className="baseProfile">
           <div className="clientDates1">
             <div className="clientRightSide">
-              <p>NAME : {props.credentials?.user.name} </p>
+            <h2>Welcome &nbsp; &nbsp; {props.credentials?.user.name}</h2>
               <p>EMAIL : {props.credentials?.user.email} </p>
               <p>PHONE : {props.credentials?.user.phone}</p>
               <p>CITY : {props.credentials?.user.city}</p>
