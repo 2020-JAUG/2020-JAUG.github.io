@@ -15,6 +15,7 @@ import MoviesGenre from './containers/MoviesGenre/MoviesGenre';
 import UpdateUser from './containers/Profile/UpdateUser';
 import OrdersUser from './containers/Orders/OrdersUser.jsx';
 import MovieTitle from './containers/MovieTitle/MovieTitle';
+import Admin from './containers/Admin/Admin.jsx';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/" exact component={Home}/>
               <Route path="/login" exact component={Login}/>
               <Route path="/profile" exact component={Profile}/>
+              <Route path="/admin" exact component={Admin}/>
               <Route path="/updateuser" exact component={UpdateUser}/>
               <Route path="/register" exact component={Register}/>
               <Route path="/upcoming" exact component={UpComing}/>
