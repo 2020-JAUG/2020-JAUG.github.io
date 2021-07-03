@@ -18,6 +18,8 @@ const Detail = (props) => {
   const [datos,setDatos] = useState({
     token: props.credentials?.token,
     user: props.credentials?.user,
+    userName: props.credentials?.user.name,
+    lastName: props.credentials?.user.lastName,
     movieId: props.movies?.id,
     movieTitle: props.movies?.original_title,
     moviePoster: props.movies?.poster_path,
@@ -41,12 +43,16 @@ const Detail = (props) => {
     // A continuamos, generamos el body de datos
     let body = {
         userId : datos.user.id,
+        userName : datos.userName,
+        lastName : datos.lastName,
         movieId: datos.movieId,
         movieTitle: datos.movieTitle,
         moviePoster : datos.moviePoster,
         rentalDate: datos.rentalDate,
         returnDate: datos.returnDate
     }
+    console.log('datoss', body);
+
 
       // Envío por axios
       axios
