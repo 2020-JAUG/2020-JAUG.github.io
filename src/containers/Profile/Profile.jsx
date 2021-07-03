@@ -51,6 +51,7 @@ const Profile = (props) => {
               <p>ADDRESS : {props.credentials?.user.address}</p>
               <p>CP : {props.credentials?.user.cp}</p>
               <p>CREATECOUNT : {moment (props.credentials?.user.createdAt).format('LL')} </p>{/*Con 3 LLL te muestra la hora*/}
+              <div className="bottonOrder" onClick={() => go()}>Orders </div>
               <div className="buttons">
                 <div
                   className="buttonUpdateC"
@@ -59,10 +60,9 @@ const Profile = (props) => {
                   UPDATE
                 </div>
               </div>
-                <div className="botomMenuLateral" onClick={() => cambiaDatos("profile")}>Profile</div>
+                {/* <div className="botomMenuLateral" onClick={() => cambiaDatos("profile")}>Profile</div>
                 <div className="botomMenuLateral" onClick={() => cambiaDatos("favoritos")}>favorites</div>
-                <div className="botomMenuLateral" onClick={() => cambiaDatos("orders")}>Orders</div>
-                <div className="botomMenuLateral" onClick={() => go()}>Orders 1</div>
+                <div className="botomMenuLateral" onClick={() => cambiaDatos("orders")}>Orders</div> */}
             </div>
           </div>
       </div>
