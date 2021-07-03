@@ -5,7 +5,7 @@ import { LOGOUT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';
 import Search from '../../components/Search/Search.jsx';
 import MovieQuery from '../Movies/MovieQuery';
-
+import logo from '../../assets/logo.png';
 
 const Header = (props) => {
 
@@ -25,6 +25,7 @@ const Header = (props) => {
             <div className="header">
 
                 <div className="headerLinks">
+                    <img onClick={() => history.push("/")} className="logoHeader" src={logo} alt="logo" />
                     <Button path="/toprated" destination="TOP RATED"/>
                     <Button path="/upcoming" destination="UPCOMING"/>
                     <Button path="/popular" destination="POPULAR"/>
