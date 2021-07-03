@@ -171,7 +171,7 @@ const UpdateUser = (props) => {
 
                 <h3 className="titleUpdate">Update your password</h3>
 
-                <form className="form">
+                <form className="form data1">
                     <input type="password" name="oldPassword" onChange={updatePasswordClient} required/>
                     <label className="lbl-nombre">
                       <span className="text-nomb">Old Password</span>
@@ -179,7 +179,7 @@ const UpdateUser = (props) => {
                 </form>
                 <div className="box2">
                     <div className="errorsText">{errors.ePassword}</div>
-                    <form className="form">
+                    <form className="form data1">
                         <input type="password" name="newPassword" onChange={updatePasswordClient} onBlur={()=>checkError("password")}required/> 
                         <label className="lbl-nombre">
                           <span className="text-nomb">New Password</span>
@@ -188,7 +188,7 @@ const UpdateUser = (props) => {
                 </div>
                 <div className="box2">
                     <div className="errorsText">{errors.ePassword2}</div>
-                    <form className="form">
+                    <form className="form data1">
                         <input type="password" name="newPassword2" onChange={updatePasswordClient} onBlur={()=>checkError("password2")} required/> 
                         <label className="lbl-nombre">
                           <span className="text-nomb">Repeat New Password</span>
@@ -207,44 +207,44 @@ const UpdateUser = (props) => {
                 <h3 className="titleUpdate">Update your info</h3>
 
                 <div className="errorsText">{errors.eName}</div>
-                <form className="form ">
-                    <input className="update1" type="text" name="name" placeholder={props.credentials?.user.name} onBlur={()=>checkError("name")} onChange={updateInfoClient} required/>
+                <form className="form data">
+                    <input className="update1" type="text" name="name"  onBlur={()=>checkError("name")} onChange={updateInfoClient} required/>
                     <label className="lbl-nombre ">
                       <span className="text-nomb ">Nombre</span>
                     </label>
                 </form>
                 <div className="errorsText">{errors.eEmail}</div>
-                <form className="form">
-                   <input type="email" name="email" placeholder={props.credentials?.user.email} onChange={updateInfoClient} onBlur={()=>checkError("email")} required/>
+                <form className="form data">
+                   <input type="email" name="email"  onChange={updateInfoClient} onBlur={()=>checkError("email")} required/>
                     <label className="lbl-nombre">
                       <span className="text-nomb">E-mail</span>
                     </label>
                 </form>
                  <div className="errorsText">{errors.ePhone}</div>
-                <form className="form">
-                    <input type="text" name="phone" placeholder={props.credentials?.user.phone} onChange={updateInfoClient} onBlur={()=>checkError("phone")}required />
+                <form className="form data">
+                    <input type="text" name="phone"  onChange={updateInfoClient} onBlur={()=>checkError("phone")}required />
                     <label className="lbl-nombre">
                       <span className="text-nomb">Phone</span>
                     </label>
                 </form>
 
                 <div className="errorsText">{errors.eCity}</div>
-                <form className="form">
-                    <input type="text" name="city" placeholder={props.credentials?.user.city} onChange={updateInfoClient} onBlur={()=>checkError("city")}required/>
+                <form className="form data">
+                    <input type="text" name="city" onChange={updateInfoClient} onBlur={()=>checkError("city")}required/>
                     <label className="lbl-nombre">
                       <span className="text-nomb">City</span>
                     </label>
                 </form>
                 <div className="errorsText">{errors.eAddress}</div>
-                <form className="form">
-                    <input type="text" name="address" placeholder={props.credentials?.user.address} onChange={updateInfoClient} onBlur={()=>checkError("address")}required/>
+                <form className="form data">
+                    <input type="text" name="address" onChange={updateInfoClient} onBlur={()=>checkError("address")}required/>
                     <label className="lbl-nombre">
                       <span className="text-nomb">Address</span>
                     </label>
                 </form>
                 <div className="errorsText">{errors.eCp}</div>
-                <form className="form">
-                    <input type="text" name="cp" placeholder={props.credentials?.user.cp} onChange={updateInfoClient} onBlur={()=>checkError("cp")} required/>
+                <form className="form data">
+                    <input type="text" name="cp" onChange={updateInfoClient} onBlur={()=>checkError("cp")} required/>
                     <label className="lbl-nombre">
                       <span className="text-nomb">Postal Code</span>
                     </label>

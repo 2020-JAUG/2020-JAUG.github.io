@@ -4,6 +4,9 @@ import axios from "axios";
 import { ADD_MOVIES } from "../../redux/types";
 import { connect } from "react-redux";
 import spinner from "../../assets/spinner2.gif";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const TopRated = (props) => {
 
@@ -73,8 +76,6 @@ const TopRated = (props) => {
   if (rated[0]?.id) {
     return (
       <div className="allContent">
-                <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
-                <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
         <div className="movieContent">
           {rated.map((movie, index) => (
             <div className="content" key={index} onClick={() => clickHandler(movie)}>
@@ -87,6 +88,10 @@ const TopRated = (props) => {
               </div>
             </div>
           ))}
+                <div className="left" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div>
+                <div className="left2" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div>
+                <div className="right" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+                <div className="right2" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
         </div>
       </div>
     );

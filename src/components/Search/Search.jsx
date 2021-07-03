@@ -9,7 +9,7 @@ const Search = (props) => {
 
     let history = useHistory();
 
-    const [comedy, setComedy] = useState ([]);
+    const [, setComedy] = useState ([]);
 
     const change = async () => {
 

@@ -1,7 +1,7 @@
 .header {
     height:  6em;
-    background-color:#68696c;
-    color: rgb(36, 34, 34);
+    background-color:#0c28f9;
+    color: rgba(201,204,231,255);
     width: 100vw;
     padding: 0 3em;
 
@@ -11,24 +11,24 @@
     align-items: center;
 }
 
-.headerLogo{
-    width: 3.5em;
-    transition: 0.3s;
-}
+// .headerLogo{
+//     width: 3.5em;
+//     transition: 0.3s;
+// }
 
-.headerLogo:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: 0.3s;
-    text-decoration: none;
-}
+// .headerLogo:hover {
+//     cursor: pointer;
+//     transform: scale(1.1);
+//     transition: 0.3s;
+//     text-decoration: none;
+// }
 .headerLinks {
-    width: 60%;
+    width: 70%;
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
+    margin-left: -1em;
+    gap: 13em;
     align-items: center;
-    // outline: auto;
 }
 
 .headerUser{
@@ -38,7 +38,27 @@
     flex-direction: row;
     align-items: center;
 
+        // height: 20em;
+        // width: 3.7em;
+        // transform: translate(-3.2em);
+        // opacity: 0.9;
+        // border-radius: 0.2em;
+        // position: absolute;
+        // position: fixed;
+        // z-index: 1;
+        // margin-top: 2em;
+        // transition: 0.2s;
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-evenly;
+        // flex-direction: column;
 }
+    .headerUser:hover {
+        transform: translate(0em);
+        cursor: pointer;
+        transition: 0.2s;
+    }
 .linkLogout {
     margin: 1em;
     transition: 0.2s;

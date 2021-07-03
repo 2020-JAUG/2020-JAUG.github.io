@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { ADD_MOVIES } from '../../redux/types';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import  spinner  from "../../assets/spinner2.gif";
 
 const MoviesGenre = (props) => {
 
@@ -71,8 +75,6 @@ const MoviesGenre = (props) => {
     if (props.movies[0]?.id) {
         return (
             <div className="allContent">
-                <div className="boton" onClick={()=> changePage("-")}>ANTERIOR</div>
-                <div className="boton" onClick={()=> changePage("+")}>SIGUIENTE</div>
                 <div className="movieImage">
                     <div className="fondoIMage"></div>
                 </div>
@@ -85,16 +87,18 @@ const MoviesGenre = (props) => {
                             </div>
                         </div>
                     ))}
+
+                    <div className="left" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div>
+                    <div className="left2" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div>
+                    <div className="right" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+                    <div className="right2" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
                 </div>
             </div>
         )
     } else {
         return (
             <div className="spinnerContainer">
-                <div className="spinner">
-                    {/* <img  src={spinner} alt="spinner" width="60" /> */}
-                    cargando...
-                </div>
+                <div className="spinner"><img  src={spinner} alt="spinner" width="60" /></div>
             </div>
         );
     }

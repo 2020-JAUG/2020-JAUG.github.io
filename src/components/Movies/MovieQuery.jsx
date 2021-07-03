@@ -37,10 +37,11 @@ const MoviesQuery = (props) => {
         });
     }
         return (
-
-            <div className="spinnerContainer">
-                <input className="option" type="text" id="title" name="name"  onChange={updateDatos}/>
-                <button className="sendButton" name="movie" onClick={() => findTitle()}>Find</button>
+            <div>
+                <div className="input">
+                    <input className="option" type="text" id="title" name="name"  onChange={updateDatos}/>
+                    <button className="bottonHeader" name="movie" onClick={() => findTitle()}>Find</button>
+                </div>
             </div>
         );
 };

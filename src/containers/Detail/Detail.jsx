@@ -1,18 +1,19 @@
+/* eslint-disable no-lone-blocks */
 import React, { useState } from 'react'
 import { useHistory } from "react-router";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from 'axios';
 // import Cart from "../../components/Cart/Cart";
-import { ADD_MOVIES } from '../../redux/types';
 import moment from 'moment';
-
-
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowCircleLeft, faCartPlus, faFilm, faStar, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 const Detail = (props) => {
 
   let history = useHistory();
 
   const [card, setCard] = useState(false);
+
 
   const [datos,setDatos] = useState({
     token: props.credentials?.token,
@@ -29,13 +30,7 @@ const Detail = (props) => {
     setDatos({...datos, [e.target.name]: e.target.value})
   }
 
-
-  const RentMovie = () => { setCard(true) }
-
-  // let allStatements
-  // if (state) {
-  //   allStatements = <div>otra cosa</div>
-  // }
+  const RentMovie = () => { setCard(true)}
 
   const Addroom = () => {
 
@@ -76,13 +71,13 @@ const Detail = (props) => {
 
     return (
       <div>
-        <div className="box1 rent">
+        <div className="takeDate">
 
             <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} />
             <input className="input1" type="date" value={datos.returnDate} name="returnDate" onChange={updateCredentials} />
 
-            <button onClick={() => order()}>Send</button>
         </div>
+            <button className="button_rent2" id="send_" onClick={() => order()}>Send</button>
         {/* <h2>{props.a}</h2> */}
       </div>
     );
@@ -99,55 +94,63 @@ const Detail = (props) => {
   const size_back_drop = "w1280";
   const size = "w300";
 
-  const rent = () => {
-
-    props.dispatch({type:ADD_MOVIES,payload: props.movies});
-  }
-
-
-  if (props.movies?.id && props.credentials?.user) {
+  if ( props.credentials.user?.name) {
     return (
       <div className="contentDetail">
+  {/* <div className="iconDataMovie"><FontAwesomeIcon className="iconDataMovie" icon={faFilm}/></div> */}
+
         <div className="vistaDetail">
-          <div className="imagenD">
-            <img
-              src={`${baseImgUrl}/${size}${props.movies.poster_path}`}
-              alt="poster"
-            />
-          <img className="back_img" src={`${baseImgUrl}/${size_back_drop}${props.movies.backdrop_path}`}
-          alt="backdrop_path"/>
+            <div className="imagenD">
+                <img
+                  src={`${baseImgUrl}/${size}${props.movies.poster_path}`}
+                  alt="poster"
+                />
+                <img className="back_img" src={`${baseImgUrl}/${size_back_drop}${props.movies.backdrop_path}`}
+              alt="backdrop_path"/>
           </div>
+
           <div className="contentSpan">
-              <p className="titleD">{props.movies.original_title} </p>
-              <p className=" over">Overview {props.movies.overview}</p>
-              <p className=" vote">Vote {props.movies.vote_average}</p>
-              <p className=" popu">Populatity{props.movies.popularity}</p>
-              <p className=" date">Premiere { moment (props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
-              <p className=" lang">Original language {props.movies.original_language}</p>
-            {/* <p className="text">{props.movies.getSimilarMovies}</p> */}
+              <div className="titleD">
+                <p>{props.movies.original_title} </p>
+              </div>
           </div>
-        </div>
 
-        {/* <Cart /> */}
+          <div className="over">
+            <p>Overview {props.movies.overview}</p>
+          </div>
 
-        {/* <Link to={"/rentmovie"} onClick={() => rent()}>Rent</Link> */}
+          <div className="vote">
+                <p>Vote {props.movies.vote_average}</p>
+          </div>
 
-        <button onClick={() => RentMovie(!card)}> Rent Movie
-          {/* {allStatements} */}
-        </button>
-        {card ? <Addroom a={card} /> : <HomePage h={card} />}
+          <div className="popu">
+                <p>Populatity:  {props.movies.popularity}</p>
+          </div>
 
-        <div className="arrows">
-          <Link className="" to={"/upcoming"}>
+          <div className="date popu">
+                <p>Premiere  { moment ( props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
+          </div>
+          </div>
+
+          <button className="button_rent"   onClick={() => RentMovie(!card)}> Rent Movie </button>
+          {card ? <Addroom a={card} /> : <HomePage h={card} />}
+
+
+        {/* <div className="arrows">
+          <Link className="" to={"/"}>
             Go Back
           </Link>
           <Link to={"/toprated"}>topRated</Link>
-        </div>
+        </div> */}
       </div>
-    );
+  );
   } else {
-    return <div>ESTOY CARGANDO!</div>;
-  }
+    return(
+
+      <div className="baseProfile singUp">
+        <div className="clientRightSide" onClick={() => history.push('/register')}> Sign up to rent a movie</div>
+      </div>
+    )}
 };
 
 export default connect((state) => ({

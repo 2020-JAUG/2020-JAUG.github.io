@@ -84,7 +84,7 @@ const Register = () => {
             }
             return Error("Files not Found");
           });
-          // history.push("/login");
+          history.push("/login");
     // let res = await axios.post("http://localhost:3001/users", body);
   };
 
@@ -361,10 +361,10 @@ const Register = () => {
             </label>
           </form>
         </div>
-        <div className="registerButton" onClick={() => applyRegister()}>
-          Enviar
-        </div>
       </div>
+        <div className="registerButton" onClick={() => applyRegister()}>
+          Send
+        </div>
     </div>
   );
 };
