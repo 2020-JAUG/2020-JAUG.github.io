@@ -17,13 +17,16 @@
         justify-content: center;
         align-items: center;
         height: 35em;
-        width: 69vw;
-        height: 36.5em;
+        width: 70vw;
+        height: 37.5em;
         margin-bottom: 2em;
         flex-wrap: wrap;
         border: solid gray;
         margin: 20px   30px   40px;
-        border: rgb(0, 123, 255) 14.4px solid;
+        // border: rgb(0, 123, 255) 14.4px solid;
+        border: rgb(0, 123, 255) 33.4px solid;
+        border-bottom: rgb(174, 181, 189) 33.4px solid;
+        border-top: rgb(174, 181, 189) 33.4px solid;
     }
     .back_img {
         width: 100vw;
@@ -43,7 +46,7 @@
 
     .titleD {
         display: flex;
-        margin-left: 0.1em;
+        margin-left: 2em;
         margin-top: -2.3em;
         width: fit-content;
         font-size: 2.1em;
@@ -100,8 +103,9 @@
     }
     .imagenD {
         display: flex;
-        margin-left: 0em;
-        width: 22em;
+        margin-left: -5em;
+        width: 16em;
+        height: 33.4em;
     }
     .back_img {
         width: 84em;
@@ -140,9 +144,8 @@
 }
 
 .takeDate {
-    position: relative;
     left: 7em;
-    top: 1em;
+    margin-top: -0.0em;
 }
 .singUp{
     margin-top: 30em;
