@@ -1,8 +1,9 @@
-
 @import './SCSS/variables.scss';
+
 @import 'containers/Home/Home.scss';
 @import './components/Header/Header.scss';
 @import 'containers/login/Login.scss';
+@import './containers/Admin/Admin.scss';
 @import 'containers/Register/Register.scss';
 
 @import 'containers/UpComing/UpComing.scss';
