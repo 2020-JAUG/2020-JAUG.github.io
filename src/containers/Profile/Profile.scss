@@ -8,6 +8,9 @@
     font-family: 'Mitr', sans-serif;
     font-family: 'Suez One', serif;
 }
+body {
+    background-color: rgba(73, 68, 68, 0.589);
+}
 
 .baseProfile{
     width: 100vw;
@@ -33,18 +36,18 @@
         flex-direction: row;
     }
     &buttonLogoutC, .buttonUpdateC{
-        height:4em;
-        width: 7em;
-        border: solid rgb(60, 90, 60) 0.15em;
-        cursor: pointer;
-        background-color: #f1f6fd;
-        transition: 0.2s;
-        margin: 0.5em;
-        cursor: pointer;
-        font-size: smaller;
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+        // margin-top: 2em;
+        transition: 0.2s;
+        height: 3em;
+        width: 8em;
+        border: 1.9px solid rgb(104, 104, 104);
+        color: #3b3b3d;
+        border-radius: 0.7em;
+        background-color: rgba(235,234,234,255);
     }
 
     .buttonLogoutC:hover, .buttonUpdateC:hover {
@@ -59,16 +62,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    top: -2em;
-    width: 45em;
-    height: 25em;
     background-color: rgba(169,182,200,255);
     border: 1.7px solid #6f6d6d;
     border-radius: 0.5em;
-
-    margin-top: -12em;
     transition: 0.2s;
+    margin-top: -7em;
+    margin-left: 5em;
+
+    background-color: rgba(235,234,234,255);
+    width: 45vw;
+    height: 57vh;
+    border: rgb(0, 123, 255) 33.4px solid;
+    border-bottom: rgb(174, 181, 189) 33.4px solid;
+    border-top: rgb(174, 181, 189) 33.4px solid;
+
+}
+.bottonOrder{
+    cursor: pointer;
 }
 
 .clientRightSide:hover {
