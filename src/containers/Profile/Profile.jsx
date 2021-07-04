@@ -51,7 +51,7 @@ const Profile = (props) => {
               <p>ADDRESS : {props.credentials?.user.address}</p>
               <p>CP : {props.credentials?.user.cp}</p>
               <p>CREATECOUNT : {moment (props.credentials?.user.createdAt).format('LL')} </p>{/*Con 3 LLL te muestra la hora*/}
-              <div className="bottonOrder" onClick={() => go()}>Orders </div>
+              <div className="buttonUpdateC" onClick={() => go()}>Orders </div>
               <div className="buttons">
                 <div
                   className="buttonUpdateC"
