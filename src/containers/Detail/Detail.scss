@@ -137,15 +137,28 @@
     background-color: rgba(235,234,234,255);
     height: 3.4em;
     width: 12em;
-    margin-left: 13em;
-    margin-top: -5.3em;
+    margin-left: 37.2em;
+    margin-top: -7.58em;
 }
 
 .takeDate {
-    left: 7em;
-    margin-top: -0.0em;
+    // left: 7em;
+    // margin-top: -0.0em;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    margin-left: 11em;
+}
+.gapDetail {
+    display: flex;
+    width: 15em;
+}
+.gapinput {
+    display: flex;
+    width: 1em;
 }
 .singUp{
-    margin-top: 19em;
+    margin-top: 18em;
+    margin-left: 30em;
     cursor: pointer;
 }
