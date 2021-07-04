@@ -69,12 +69,14 @@ const Register = () => {
     axios
         .post("http://localhost:3001/users", body)
         .then((res) => {
-            setDatosUser(res.data.results);
-          })
+          setDatosUser(res.data.results);
+          console.log('then', res.data.result);
+        })
           .catch((err) => {
             var errorText = err.response.data.message;
             console.log(errorText);
             if (errorText.includes("email")){
+              console.log('err', err.response.data.message);
               setError(JSON.stringify("El email ya esta registrado."));
 
             } else if (errorText.includes("phone")){
