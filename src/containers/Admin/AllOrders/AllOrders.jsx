@@ -69,16 +69,16 @@ const AllOrders = (props) => {
                         <div className="content" key={index}  >
 
                         <div  className="cardOrder">
-                            <p>Rented by:  {order.userName}  {order.lastName}</p>
-                            <p className="texto">Identifier : {order.userId} </p>
-                            <p className="texto">Order Number: {order.id} </p>
+                            <p className="order1">Rented by:  {order.userName}  {order.lastName}</p>
+                            <p className="order">Identifier : {order.userId} </p>
+                            <p className="order">Order Number: {order.id} </p>
                             <p className="order"> Rental Date : { moment (order.rentalDate).format('LL')} </p>
                             <p className="order"> Return Date : { moment (order.returnDate).format('LL')} </p>
 
                             <div className="buttons">
-                            <div className="updateButton2" onClick={() => deleteOrder(order)} >REMOVE</div>
+                            <div className="updateButton" onClick={() => deleteOrder(order)} >REMOVE</div>
                             <div
-                                className="updateButton2"
+                                className="updateButton"
                                 onClick={() => updateOrder(order)}
                             >
                                 UPDATE
