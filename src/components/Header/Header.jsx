@@ -46,6 +46,7 @@ const Header = (props) => {
             <div className="header">
 
                 <div className="headerLinks">
+                    <img onClick={() => history.push("/")} className="logoHeader" src={logo} alt="logo" />
                     <Button path="/toprated" destination="TOP RATED" onClick={() => llevame()} />
                     <Button path="/upcoming" destination="UPCOMING"/>
                     <Button path="/popular" destination="POPULAR"/>

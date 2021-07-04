@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    width: 25em;
-    height: 30em;
+    width: 23em;
+    height: 36em;
     margin: 2em;
     padding: 2em;
     border-radius: 1em;
@@ -15,11 +15,40 @@
         transform: scale(1.06);
         transition: 0.5s;
     }
+    .order {
+        display: flex;
+        font-size: 1.3em;
+    }
+    .order1 {
+        display: flex;
+        font-size: 1.2em;
+    }
 
     .imgAdmin {
         display: flex;
         width: 13em;
         height: 13em;
         border-radius: 0.5em;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.4em;
+    }
+    .updateButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.2s;
+        height: 2.7em;
+        margin-top: 0.3em;
+        width: 7em;
+        border: 1.9px solid rgb(104, 104, 104);
+        color: #3b3b3d;
+        border-radius: 0.7em;
+        background-color: rgba(235,234,234,255);
     }
 }

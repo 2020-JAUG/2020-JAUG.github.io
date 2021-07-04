@@ -3,8 +3,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ORDERS } from '../../redux/types';
 import moment  from 'moment';
+import { useHistory } from 'react-router';
 
 const OrdersUser = (props) => {
+
+    let history = useHistory();
 
     const [orders, setOrders] = useState([]);
     const [datos,] = useState({
@@ -39,6 +42,29 @@ const OrdersUser = (props) => {
         });
     }
 
+    const deleteOrder = async (order) => {
+        let token = props.credentials?.token;
+        let user = props.credentials?.user;
+
+        let body = {
+          id: order.id,
+          user: user.id
+        };
+
+        let res = await axios.post('http://localhost:3001/orders/delete', body, {headers: { authorization: "Bearer " + token }});
+
+        setOrders(res.data);
+
+        window.location.reload();
+    }
+
+    const updateOrder = (detail) => {
+
+        props.dispatch({type: ORDERS, payload: detail});
+
+        history.push('/updateorders');
+    }
+
     const baseImgUrl = "https://image.tmdb.org/t/p";
     const size = "w300";
 
@@ -54,6 +80,7 @@ const OrdersUser = (props) => {
                     <div key={index} className="orderCards">
 
                         <img
+                        className="imgOrderUser"
                         src={`${baseImgUrl}/${size}${order.moviePoster}`}
                         alt="poster"
                         />
@@ -62,14 +89,16 @@ const OrdersUser = (props) => {
                             <p className="order"> Return Date : { moment (order.returnDate).format('LL')} </p>
                         </div>
 
-                        <div className="buttons1">
-                        {/* <div
-                            className="buttonUpdateA"
-                            onClick={() => saveAppointment(order)}
-                        >
-                            UPDATE
-                        </div> */}
-                        {/* <div className="buttonDeleteA" onClick={() => deleteAppointment(order)}>REMOVE</div> */}
+
+                        <div className="buttons">
+                            <div className="updateButton3" onClick={() => deleteOrder(order)} >REMOVE</div>
+                            <div
+                                className="updateButton3"
+                                onClick={() => updateOrder(order)}
+                            >
+                                UPDATE
+                            </div>
+
                         </div>
                     </div>
                 ))}

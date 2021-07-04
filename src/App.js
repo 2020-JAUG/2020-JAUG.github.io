@@ -13,6 +13,7 @@ import UpComing from './containers/UpComing/UpComing.jsx';
 import Popular from './containers/Popular/Popular';
 import MoviesGenre from './containers/MoviesGenre/MoviesGenre';
 import UpdateUser from './containers/Profile/UpdateUser';
+import UpdateOrders from './containers/Admin/Update/UpdateOrders';
 import OrdersUser from './containers/Orders/OrdersUser.jsx';
 import MovieTitle from './containers/MovieTitle/MovieTitle';
 import Admin from './containers/Admin/AdminProfile/Admin.jsx';
@@ -34,6 +35,7 @@ function App() {
               <Route path="/allorders" exact component={AllOrders}/>
               <Route path="/allusers" exact component={AllUsers}/>
               <Route path="/updateuser" exact component={UpdateUser}/>
+              <Route path="/updateorders" exact component={UpdateOrders}/>
               <Route path="/register" exact component={Register}/>
               <Route path="/upcoming" exact component={UpComing}/>
               <Route path="/toprated" exact component={TopRated}/>

@@ -14,12 +14,19 @@
     .orderContent {
         width: 100vw;
         height: 100%;
-        margin-top: 2em;
+        margin-top: 3em;
         margin-bottom: 3em;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+    }
+
+    .imgOrderUser {
+        display: flex;
+        width: 16em;
+        height: 16em;
+        border-radius: 0.5em;
     }
 
     .orderCards {
@@ -29,18 +36,19 @@
         justify-content: space-between;
         cursor: pointer;
         width: 21em;
+        height: 31em;
         margin: 2em;
         padding: 1em;
         border: 1.7px solid #6f6d6d;
         border-radius: 1em;
-        background-color:hsla(222, 8%, 68%, 0.529);
+        background-color: rgba(169,182,200,255);
         &:hover {
             // opacity: 0.5;
             transform: scale(1.06);
             transition: 0.5s;
         }
         .info {
-            margin-left: 4em;
+            margin-top: -3.4em;
         }
     }
     .order {
@@ -48,16 +56,38 @@
         line-height: 2.2;
     }
 }
-.notOrder {
-    display: flex;
-    border: 1.4px solid rgb(104, 104, 104);
-    background-color: rgba(235,234,234,255);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    height: 50vh;
-    border: rgb(0, 123, 255) 33.4px solid;
-    border-bottom: rgb(174, 181, 189) 33.4px solid;
-    border-top: rgb(174, 181, 189) 33.4px solid;
-}
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.4em;
+    }
+    .updateButton3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        margin-top: -4em;
+
+        transition: 0.2s;
+        height: 2.7em;
+        width: 7em;
+        border: 1.9px solid rgb(104, 104, 104);
+        color: #3b3b3d;
+        border-radius: 0.7em;
+        background-color: rgba(235,234,234,255);
+    }
+    .notOrder {
+        display: flex;
+        border: 1.4px solid rgb(104, 104, 104);
+        background-color: rgba(235,234,234,255);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        height: 50vh;
+        border: rgb(0, 123, 255) 33.4px solid;
+        border-bottom: rgb(174, 181, 189) 33.4px solid;
+        border-top: rgb(174, 181, 189) 33.4px solid;
+    }
