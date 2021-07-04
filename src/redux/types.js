@@ -5,6 +5,7 @@ export const LEFT_USER = "left_user";
 
 export const FAVORITES = "favorites";
 export const ORDERS = "orders";
+export const UPDATE_ORDERS = "updateorders";
 export const SEARCH_DATO = "searchdato";
 
 export const ADD_MOVIES = "add_movies";
