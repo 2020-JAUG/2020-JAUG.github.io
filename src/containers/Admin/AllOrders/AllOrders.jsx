@@ -4,7 +4,7 @@ import spinner from '../../../assets/spinner2.gif';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import moment  from 'moment';
-import { ORDERS, UPDATE_ORDERS } from '../../../redux/types';
+import { ORDERS } from '../../../redux/types';
 
 
 const AllOrders = (props) => {
@@ -12,11 +12,6 @@ const AllOrders = (props) => {
     let history = useHistory();
 
     const [orders, setOrders] = useState([]);
-
-    useEffect( () => {
-        findOrders();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     useEffect( () => {
         findOrders();
@@ -46,8 +41,6 @@ const AllOrders = (props) => {
           id: order.id,
           user: user.id
         };
-
-        console.log(body)
 
         let res = await axios.post('http://localhost:3001/orders/delete', body, {headers: { authorization: "Bearer " + token }});
 
@@ -117,4 +110,4 @@ const AllOrders = (props) => {
 
 export default connect((state)=>({
     credentials: state.credentials,
-}))(AllOrders);;
+}))(AllOrders);
