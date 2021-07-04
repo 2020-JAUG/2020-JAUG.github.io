@@ -3,8 +3,11 @@
 @import 'containers/Home/Home.scss';
 @import './components/Header/Header.scss';
 @import 'containers/login/Login.scss';
-@import './containers/Admin/Admin.scss';
 @import 'containers/Register/Register.scss';
+
+@import './containers/Admin/AdminProfile/Admin.scss';
+@import './containers/Admin/AllUsers/AllUsers.scss';
+@import './containers/Admin/AllOrders/AllOrders.scss';
 
 @import 'containers/UpComing/UpComing.scss';
 @import 'containers/TopRated/TopRated.scss';
