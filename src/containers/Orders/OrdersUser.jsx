@@ -42,7 +42,7 @@ const OrdersUser = (props) => {
         });
     }
 
-    const deleteOrder = async (order) => {
+    const removeOrder = async (order) => {
         let token = props.credentials?.token;
         let user = props.credentials?.user;
 
@@ -54,7 +54,6 @@ const OrdersUser = (props) => {
         let res = await axios.post('http://localhost:3001/orders/delete', body, {headers: { authorization: "Bearer " + token }});
 
         setOrders(res.data);
-
         window.location.reload();
     }
 
@@ -91,7 +90,7 @@ const OrdersUser = (props) => {
 
 
                         <div className="buttons">
-                            <div className="updateButton3" onClick={() => deleteOrder(order)} >REMOVE</div>
+                            <div className="updateButton3" onClick={() => removeOrder(order)} >REMOVE</div>
                             <div
                                 className="updateButton3"
                                 onClick={() => updateOrder(order)}

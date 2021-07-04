@@ -40,8 +40,15 @@ const Admin = (props) => {
       </div>
     );
   } else {
-    return <div>You do not have permission</div>;
-  }
+    return (
+
+      <div className="spinnerContainer">
+        <div className="spinner notOrder">
+          <h1>You do not have permission</h1>
+        </div>
+      </div>
+
+    )}
 };
 
 export default connect((state) => ({
