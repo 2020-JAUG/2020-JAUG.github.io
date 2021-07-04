@@ -1,26 +1,110 @@
-.cardOrder2 {
-
+.user {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    width: 23em;
-    height: 31em;
-    margin: 2em;
-    padding: 2.3em;
-    border-radius: 1em;
-    background-color: rgba(169,182,200,255);
-    border: 1.7px solid #6f6d6d;
-    &:hover {
-        transform: scale(1.06);
-        transition: 0.5s;
-    }
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 7em;
+    margin-left: 12em;
 
-    .imgAdmin2 {
-        display: flex;
-        width: 13em;
-        height: 13em;
-        border-radius: 0.5em;
-    }
+    background-color: rgba(235,234,234,255);
+    width: 80vw;
+    height: 60vh;
+    border: rgb(0, 123, 255) 33.4px solid;
+    border-bottom: rgb(174, 181, 189) 33.4px solid;
+    border-top: rgb(174, 181, 189) 33.4px solid;
+
+        .userContent2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 0.5em;
+            margin-right: 32em;
+            padding-top: 2em;
+            width: 30em;
+            height: 29em;
+            margin-bottom: 2em;
+        }
+
+        .orderContent2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            border: 1px solid #6f6d6d3e;
+            border-radius: 0.5em;
+            width: 30em;
+            height: 25em;
+            margin-top: -2em;
+            margin-left: -19em;
+            margin-right: 1em;
+        }
+        .orders {
+            display: flex;
+        }
+            .users{
+                display: flex;
+            }
+            .updateDate {
+                display: flex;
+                flex-direction: row;
+                margin-top: 2em;
+            }
+            .gapInput2 {
+                display: flex;
+                width: 12em;
+            }
+
+        .updateButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 1.4em;
+            margin-top: 2em;
+            transition: 0.2s;
+            height: 3em;
+            width: 8em;
+            border: 1.9px solid rgb(104, 104, 104);
+            color: #3b3b3d;
+            border-radius: 0.7em;
+            background-color: rgba(235,234,234,255);
+        }
+
+        .updateButton:hover {
+            transition: 0.2s;
+        }
+
+        .titleUpdate {
+            margin-bottom: -3em;
+            margin-top: -2em;
+        }
+
+        .cardOrder2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            width: 23em;
+            height: 28em;
+            margin: 2em;
+            padding: 2.3em;
+            border-radius: 1em;
+            background-color: rgba(169,182,200,255);
+            border: 1.7px solid #6f6d6d;
+            &:hover {
+                transform: scale(1.06);
+                transition: 0.5s;
+            }
+            .imgUser2 {
+                display: flex;
+                width: 13em;
+                height: 13em;
+                border-radius: 0.5em;
+            }
+        }
 }
+
+
