@@ -78,13 +78,15 @@ const Detail = (props) => {
     return (
       <div>
         <div className="takeDate">
-
-            <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} />
+            <h3>Rental Date</h3><div className="gapinput"></div>
+            <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} /><div className="gapDetail"></div>
+            <h3>Renturn Date</h3><div className="gapinput"></div>
             <input className="input1" type="date" value={datos.returnDate} name="returnDate" onChange={updateCredentials} />
 
         </div>
-            <button className="button_rent2" id="send_" onClick={() => order()}>Send</button>
-        {/* <h2>{props.a}</h2> */}
+            <div className="buttonSend">
+              <button className="button_rent2" id="send_" onClick={() => order()}>Send</button>
+            </div>
       </div>
     );
 }
