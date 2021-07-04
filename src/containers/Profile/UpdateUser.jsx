@@ -72,8 +72,8 @@ const UpdateUser = (props) => {
             props.dispatch({type:UPDATE_USER, payload:res.data});
 
             setTimeout(()=>{
-                history.push('/profile');
-            },750);
+                history.push('/login');
+            },250);
 
         } catch(err) {
             // console.log(err.response.data.message);
