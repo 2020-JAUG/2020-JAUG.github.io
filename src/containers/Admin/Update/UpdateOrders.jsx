@@ -17,7 +17,6 @@ const UpdateOrders = (props) => {
     token: props.credentials?.token,
     user: props.credentials?.user,
     id: props.infoUser?.id,
-    movieId: props.movies?.id,
     moviePoster: props.movies?.poster_path,
     rentalDate: new Date(),
     returnDate: new Date()
@@ -36,16 +35,16 @@ const UpdateOrders = (props) => {
     let body = {
         userId : datos.user.id,
         orderId: datos.id,
-        movieId: datos.movieId,
         rentalDate: datos.rentalDate,
         returnDate: datos.returnDate
-    };
-    console.log("bodyUpdate", body);
+      };
+      console.log("bodyUpdate", body);
 
       axios
         .put("http://localhost:3001/orders/update", body, {headers:{'authorization':'Bearer ' + token}})
         .then((res) => {
 
+      console.log("respuestaBack", res.data);
           setTimeout(()=>{
             history.push("/profile");
           },250)
