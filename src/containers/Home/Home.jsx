@@ -54,7 +54,6 @@ const Home = (props) => {
       setRecommendations(res.data.results);
 
       props.dispatch({ type: ADD_MOVIES, payload: res.data.results });
-      console.log(res.data.results);
     } catch (error) {
       console.log(error);
     }

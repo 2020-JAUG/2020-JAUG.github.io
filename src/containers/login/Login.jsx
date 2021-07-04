@@ -74,7 +74,6 @@ const Login = (props) => {
         axios
         .post('http://localhost:3001/login', body)
         .then((res) => {
-            console.log('esto es res', res)
             //Guardo en RDX
             props.dispatch({type:LOGIN,payload:res.data});
 

@@ -1,0 +1,25 @@
+.cardOrder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 25em;
+    height: 30em;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 1em;
+    background-color: rgba(169,182,200,255);
+    border: 1.7px solid #6f6d6d;
+    &:hover {
+        transform: scale(1.06);
+        transition: 0.5s;
+    }
+
+    .imgAdmin {
+        display: flex;
+        width: 13em;
+        height: 13em;
+        border-radius: 0.5em;
+    }
+}
