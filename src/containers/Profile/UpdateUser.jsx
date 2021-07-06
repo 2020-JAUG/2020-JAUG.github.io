@@ -67,7 +67,7 @@ const UpdateUser = (props) => {
                 address: updateInfo.address
             }
 
-            let res = await axios.put('http://localhost:3001/users/updateuser', body, {headers:{'authorization':'Bearer ' + token}});
+            let res = await axios.put('https://back-movie.herokuapp.com/users/updateuser', body, {headers:{'authorization':'Bearer ' + token}});
 
             props.dispatch({type:UPDATE_USER, payload:res.data});
 
@@ -94,7 +94,7 @@ const UpdateUser = (props) => {
                 newPassword : passwords.newPassword,
                 newPassword2 : passwords.newPassword2,
             }
-            let res = await axios.put('http://localhost:3001/users/updatepassword', body, {headers:{'authorization':'Bearer ' + token}});
+            let res = await axios.put('https://back-movie.herokuapp.com/users/updatepassword', body, {headers:{'authorization':'Bearer ' + token}});
             setTimeout(()=>{
 
                 props.dispatch({type:UPDATE_USER, payload:res.data});

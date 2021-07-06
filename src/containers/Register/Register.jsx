@@ -67,7 +67,7 @@ const Register = () => {
     console.log("body", body);
 
     axios
-        .post("http://localhost:3001/users", body)
+        .post("https://back-movie.herokuapp.com/users", body)
         .then((res) => {
           setDatosUser(res.data.results);
           console.log('then', res.data.result);

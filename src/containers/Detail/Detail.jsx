@@ -56,7 +56,7 @@ const Detail = (props) => {
 
       // Envío por axios
       axios
-      .post("http://localhost:3001/orders", body, {headers:{'authorization':'Bearer ' + token}})
+      .post("https://back-movie.herokuapp.com/orders", body, {headers:{'authorization':'Bearer ' + token}})
       .then((res) => {
 
         setTimeout(()=>{

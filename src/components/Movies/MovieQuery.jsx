@@ -25,7 +25,7 @@ const MoviesQuery = (props) => {
         let body = { query: query, }
 
           axios
-          .post("http://localhost:3001/movies/search", body)
+          .post("https://back-movie.herokuapp.com/movies/search", body)
           .then((res) => {
 
                 props.dispatch({type:ADD_MOVIES, payload: res.data.results});

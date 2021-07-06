@@ -24,7 +24,7 @@ const AllOrders = (props) => {
 
             let token = props.credentials?.token;
 
-            let res = await axios.get("http://localhost:3001/orders",  {headers:{'authorization':'Bearer ' + token}});
+            let res = await axios.get("https://back-movie.herokuapp.com/orders",  {headers:{'authorization':'Bearer ' + token}});
             setOrders(res.data);
             props.dispatch({ type: ORDERS, payload: res.data });
 
@@ -42,7 +42,7 @@ const AllOrders = (props) => {
           user: user.id
         };
 
-        let res = await axios.post('http://localhost:3001/orders/delete', body, {headers: { authorization: "Bearer " + token }});
+        let res = await axios.post('https://back-movie.herokuapp.com/orders/delete', body, {headers: { authorization: "Bearer " + token }});
 
         setOrders(res.data);
 

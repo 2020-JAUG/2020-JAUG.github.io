@@ -24,7 +24,7 @@ const AllUsers = (props) => {
 
             let token = props.credentials?.token;
 
-            let res = await axios.get("http://localhost:3001/users", {headers:{'authorization':'Bearer ' + token}});
+            let res = await axios.get("https://back-movie.herokuapp.com/users", {headers:{'authorization':'Bearer ' + token}});
             setUsers(res.data);
 
         } catch (error) {
@@ -42,7 +42,7 @@ const AllUsers = (props) => {
         };
 
         console.log(body)
-        let res = await axios.post('http://localhost:3001/users/removeuser', body, {headers: { authorization: "Bearer " + token }});
+        let res = await axios.post('https://back-movie.herokuapp.com/users/removeuser', body, {headers: { authorization: "Bearer " + token }});
 
         setUsers(res.data);
         console.log('removeUser', res.data);

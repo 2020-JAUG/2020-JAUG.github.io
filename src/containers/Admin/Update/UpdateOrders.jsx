@@ -37,7 +37,7 @@ const UpdateOrders = (props) => {
       };
 
       axios
-        .put("http://localhost:3001/orders/update", body, {headers:{'authorization':'Bearer ' + token}})
+        .put("https://back-movie.herokuapp.com/orders/update", body, {headers:{'authorization':'Bearer ' + token}})
         .then((res) => {
 
       console.log("respuestaBack", res.data);

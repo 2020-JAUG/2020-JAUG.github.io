@@ -28,7 +28,7 @@ const OrdersUser = (props) => {
         }
 
         axios
-        .post("http://localhost:3001/orders/orderById", body, {headers:{'authorization':'Bearer ' + token}})
+        .post("https://back-movie.herokuapp.com/orders/orderById", body, {headers:{'authorization':'Bearer ' + token}})
         .then((res) => {
 
             setOrders(res.data);
