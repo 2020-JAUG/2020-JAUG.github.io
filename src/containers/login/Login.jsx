@@ -70,7 +70,7 @@ const Login = (props) => {
             password : credentials.password
         }
         // Envío por axios
-
+        // "https://video-rados-b.herokuapp.com/1/user/login", body)
         axios
         .post('https://back-movie.herokuapp.com/login', body)
         .then((res) => {
@@ -83,7 +83,8 @@ const Login = (props) => {
                 history.push('/admin')
             }
         })
-        .catch((msgError) => {
+        .catch((msgError, err) => {
+            console.log(err.response.data.message);
             setMensajeError({...msgError, eValidate: 'Wrong email or password'});
 
         });
