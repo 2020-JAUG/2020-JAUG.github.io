@@ -3,6 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import "../../Global.css";
 import { useHistory } from "react-router";
+import { notification } from 'antd';
 
 const Register = () => {
 
@@ -38,7 +39,7 @@ const Register = () => {
     ePhone: "",
   });
 
-  const [, setError] = useState([]);
+  const [ , setError] = useState([]);
 
   useEffect(() => {}, []);
 
@@ -69,25 +70,30 @@ const Register = () => {
     axios
         .post("https://back-movie.herokuapp.com/users", body)
         .then((res) => {
+
           setDatosUser(res.data.results);
-          console.log('then', res.data.result);
+          notification.success({message:'Registered User.',description: "We have sent you an email to activate the account." });
+          history.push("/login");
         })
           .catch((err) => {
             var errorText = err.response.data.message;
-            console.log(errorText);
-            if (errorText.includes("email")){
-              console.log('err', err.response.data.message);
-              setError(JSON.stringify("El email ya esta registrado."));
 
-            } else if (errorText.includes("phone")){
-              setError(JSON.stringify("El telefono ya esta registrado."));
-            }else{
-              setError(JSON.stringify(err.response.data.message));
-            }
-            return Error("Files not Found");
+              if (errorText?.includes("email")){
+
+                notification.warning({message:'Attention.',description: JSON.stringify(err.response.data.message)});
+                setError(JSON.stringify("The email is already registered."));
+
+              } else if (errorText?.includes("phone")){
+
+                notification.warning({message:'Attention.',description: JSON.stringify(err.response.data.message)});
+                setError(JSON.stringify("The phone is already registered."));
+              }else{
+
+                notification.warning({message:'Atencion.',description: JSON.stringify(err.response.data.message)});
+                setError(JSON.stringify(err.response.data.message));
+              }
+              return Error("Files not Found");
           });
-          history.push("/login");
-    // let res = await axios.post("http://localhost:3001/users", body);
   };
 
   const checkError = (arg) => {
