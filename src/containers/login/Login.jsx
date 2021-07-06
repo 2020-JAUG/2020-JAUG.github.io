@@ -84,7 +84,7 @@ const Login = (props) => {
             }
         })
         .catch((msgError, err) => {
-            console.log(err.response.data.message);
+            // console.log(err.response.data.message);
             setMensajeError({...msgError, eValidate: 'Wrong email or password'});
 
         });
