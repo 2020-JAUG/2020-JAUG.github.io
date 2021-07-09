@@ -13,7 +13,7 @@ const Button = (props) => {
 
     return(
 
-        <div className="button" onClick={() => go()}>
+        <div className="button  nav-link  active" aria-current="page"  onClick={() => go()}>
             {props.destination}
         </div>
     )

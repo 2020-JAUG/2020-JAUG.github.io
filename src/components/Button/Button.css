@@ -1,10 +1,12 @@
 .button{
     margin: 1em;
     transition: 0.2s;
+    color: black;
 }
 
 .button:hover{
     cursor: pointer;
+    color: black;
     text-decoration: none;
     transition: 0.2s;
 }

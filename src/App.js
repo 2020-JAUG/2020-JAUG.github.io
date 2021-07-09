@@ -2,7 +2,7 @@
 import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Fragment } from 'react'
-import Header from './components/Header/Header';
+import Header2 from './components/Header/Header2';
 import Home from './containers/Home/Home';
 import Register from './containers/Register/Register';
 import Profile from './containers/Profile/Profile';
@@ -25,7 +25,7 @@ function App() {
   return (
     <Fragment>
           <BrowserRouter>
-            <Header />
+            <Header2 />
 
             <Switch>
               <Route path="/" exact component={Home}/>

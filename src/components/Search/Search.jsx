@@ -34,8 +34,8 @@ const Search = (props) => {
 
         return (
 
-            <div className="drop_down" >
-                <select  id="opciones"  className="input" onChange={ change } >
+            <div className="drop_dow-select mt-4  " >
+                <select  id="opciones"  className="input  dropdown-toggle"  onChange={ change } >
                     <option value="35">Comedy</option>
                     <option value="10749">Romance</option>
                     <option value="12">Adventure</option>
@@ -48,7 +48,7 @@ const Search = (props) => {
         )
     } else {
         return(
-            <div>Registrate</div>
+            <div></div>
         )
     }
 }
