@@ -82,8 +82,8 @@ const Home = (props) => {
               onClick={() => clickHandler(movie)}
             >
               <div className="content2">
-                <p className="text">{movie.title} </p>
                 <img
+                  className="imgaPort"
                   src={`${baseImgUrl}/${size}${movie.poster_path}`}
                   alt="poster"
                 />

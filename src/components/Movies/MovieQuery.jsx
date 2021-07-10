@@ -38,9 +38,9 @@ const MoviesQuery = (props) => {
     }
         return (
             <div>
-                <div className="input">
-                    <input className="option" type="text" id="title" name="name"  onChange={updateDatos}/>
-                    <button className="bottonHeader" name="movie" onClick={() => findTitle()}>Find</button>
+                <div className="input gap-4 ">
+                    <input className="option form-control me-6" type="text" id="title" name="name"  onChange={updateDatos}/>
+                    <button className="bottonHeader btn btn-outline-primary " name="movie" onClick={() => findTitle()} >Find</button>
                 </div>
             </div>
         );
