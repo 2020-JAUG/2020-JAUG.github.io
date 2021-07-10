@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Search from "../../components/Search/Search.jsx";
 import MovieQuery from "../Movies/MovieQuery";
 import logo from "../../assets/logo.png";
@@ -20,7 +20,7 @@ const Header2 = (props) => {
 
   if (props.credentials.user?.name) {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light  header">
+      <nav className="navbar navbar-expand-lg navbar-light bg-dark header">
         <div className="container-fluid">
             <img onClick={() => history.push("/")} className="logoHeader" src={logo} alt="logo" height="78em" width="76"/>
           <button
@@ -37,7 +37,7 @@ const Header2 = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Button path="/toprated"  destination="TOP RATED"/>
+                <Button path="/toprated" className="header"  destination="TOP RATED"/>
               </li>
               <li className="nav-item">
                 <Button path="/upcoming" destination="UPCOMING"/>

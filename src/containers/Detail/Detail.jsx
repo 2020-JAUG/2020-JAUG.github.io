@@ -99,15 +99,41 @@ const Detail = (props) => {
   }
 
   const baseImgUrl = "https://image.tmdb.org/t/p";
-  const size_back_drop = "w1280";
+  // const size_back_drop = "w1280";
   const size = "w300";
 
   if ( props.credentials.user?.name) {
     return (
-      <div className="contentDetail">
+
+      <div className="card mb-3  bg-dark text-white" Style="max-width: 1050px;">
+      <div className="row g-0">
+        <div className="col-md-4 card bg-dark text-white">
+          <img src={`${baseImgUrl}/${size}${props.movies.poster_path}`} className="img-fluid rounded-start" alt="poster"/>
+        </div>
+        <div className="col-md-8  ">
+          <div className="card-body">
+            <p className="card-text mt-1 "><p>Overview {props.movies.overview}</p></p>
+            <p className="card-text"><small className="text-muted">
+              <p>Vote {props.movies.vote_average}</p></small>
+            <p className="card-text"><small className="text-muted">
+              <p>Populatity:  {props.movies.popularity}</p></small>
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      {/* // <div className="contentDetail"> */}
   {/* <div className="iconDataMovie"><FontAwesomeIcon className="iconDataMovie" icon={faFilm}/></div> */}
 
-        <div className="vistaDetail">
+        {/* <div className="vistaDetail">
             <div className="imagenD">
                 <img
                   src={`${baseImgUrl}/${size}${props.movies.poster_path}`}
@@ -137,12 +163,12 @@ const Detail = (props) => {
 
           <div className="date popu">
                 <p>Premiere  { moment ( props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
-          </div>
-          </div>
+      {/* //     </div>
+      //     </div> */}
+      {/* // </div> */}
 
           <button className="button_rent"   onClick={() => RentMovie(!card)}> Rent Movie </button>
           {card ? <Addroom a={card} /> : <HomePage h={card} />}
-
 
         {/* <div className="arrows">
           <Link className="" to={"/"}>
