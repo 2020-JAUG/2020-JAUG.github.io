@@ -75,6 +75,8 @@ const Home = (props) => {
           <div className="fondoIMage"></div>
         </div>
         <div className="movieContent">
+              <div  onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
+              <div  onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
           {props.movies.map((movie, index) => (
             <div
               className="content"
@@ -90,19 +92,8 @@ const Home = (props) => {
               </div>
             </div>
           ))}
-
-          <div className="left" onClick={() => changePage("-")}>
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </div>
-          <div className="left2" onClick={() => changePage("-")}>
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </div>
-          <div className="right" onClick={() => changePage("+")}>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </div>
-          <div className="right2" onClick={() => changePage("+")}>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </div>
+              <div onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
+              <div onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
         </div>
       </div>
     );

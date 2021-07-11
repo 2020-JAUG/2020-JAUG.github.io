@@ -72,7 +72,7 @@ const Login = (props) => {
         // Envío por axios
 
         axios
-        .post('http://localhost:3001/login', body)
+        .post('https://back-movie.herokuapp.com/login', body)
         .then((res) => {
             //Guardo en RDX
             props.dispatch({type:LOGIN,payload:res.data});

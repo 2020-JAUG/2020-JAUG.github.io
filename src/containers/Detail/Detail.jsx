@@ -77,15 +77,15 @@ const Detail = (props) => {
 
     return (
       <div>
-        <div className="takeDate">
+        <div className="form-outline datepicker mt-5 text-center row m-0 align-items-center">
             <h3>Rental Date</h3><div className="gapinput"></div>
-            <input className="input1" type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} /><div className="gapDetail"></div>
-            <h3>Renturn Date</h3><div className="gapinput"></div>
+            <input className="input1 " type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} /><div className="gapDetail"></div>
+            <h3>Return Date</h3><div className="gapinput"></div>
             <input className="input1" type="date" value={datos.returnDate} name="returnDate" onChange={updateCredentials} />
 
         </div>
-            <div className="buttonSend">
-              <button className="button_rent2" id="send_" onClick={() => order()}>Send</button>
+            <div className="buttonSend card-footer text-center ">
+              <button type="button" className="bottonHeader btn btn-outline-primary button_rent2 mt-4 mb-2" id="send_" onClick={() => order()}>Send</button>
             </div>
       </div>
     );
@@ -105,84 +105,39 @@ const Detail = (props) => {
   if ( props.credentials.user?.name) {
     return (
 
-      <div className="card mb-3  bg-dark text-white" Style="max-width: 1050px;">
+      <div className="card mb-0 text-center row m-0 align-items-center  bg-dark text-white" Style="max-width: 1050px;">
       <div className="row g-0">
         <div className="col-md-4 card bg-dark text-white">
           <img src={`${baseImgUrl}/${size}${props.movies.poster_path}`} className="img-fluid rounded-start" alt="poster"/>
         </div>
         <div className="col-md-8  ">
           <div className="card-body">
-            <p className="card-text mt-1 "><p>Overview {props.movies.overview}</p></p>
-            <p className="card-text"><small className="text-muted">
-              <p>Vote {props.movies.vote_average}</p></small>
-            <p className="card-text"><small className="text-muted">
-              <p>Populatity:  {props.movies.popularity}</p></small>
+            <p className="card-text mt-1 "><p><h5>Overview</h5> {props.movies.overview}</p></p>
+            <p className="card-text">
+              <p>Vote &nbsp; {props.movies.vote_average}</p>
+            <p className="card-text">
+              <p>Populatity  &nbsp;  {props.movies.popularity}</p>
+            </p>
+            <p className="card-text">
+              <p>Premiere &nbsp;  { moment  ( props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
             </p>
             </p>
+          </div>
+          <div className="card-footer text-center row m-0 align-items-center text-center">
+
+          <button className="button_rent"   onClick={() => RentMovie(!card)}> Rent Movie </button>
+          {card ? <Addroom a={card} /> : <HomePage h={card} />}
           </div>
         </div>
       </div>
 
-
-
-
-
-
-
-
-      {/* // <div className="contentDetail"> */}
-  {/* <div className="iconDataMovie"><FontAwesomeIcon className="iconDataMovie" icon={faFilm}/></div> */}
-
-        {/* <div className="vistaDetail">
-            <div className="imagenD">
-                <img
-                  src={`${baseImgUrl}/${size}${props.movies.poster_path}`}
-                  alt="poster"
-                />
-                <img className="back_img" src={`${baseImgUrl}/${size_back_drop}${props.movies.backdrop_path}`}
-              alt="backdrop_path"/>
-          </div>
-
-          <div className="contentSpan">
-              <div className="titleD">
-                <p>{props.movies.original_title} </p>
-              </div>
-          </div>
-
-          <div className="over">
-            <p>Overview {props.movies.overview}</p>
-          </div>
-
-          <div className="vote">
-                <p>Vote {props.movies.vote_average}</p>
-          </div>
-
-          <div className="popu">
-                <p>Populatity:  {props.movies.popularity}</p>
-          </div>
-
-          <div className="date popu">
-                <p>Premiere  { moment ( props.movies.release_date).format('LL') }</p>{/*LL es el formato en que se enseña la hora*/}
-      {/* //     </div>
-      //     </div> */}
-      {/* // </div> */}
-
-          <button className="button_rent"   onClick={() => RentMovie(!card)}> Rent Movie </button>
-          {card ? <Addroom a={card} /> : <HomePage h={card} />}
-
-        {/* <div className="arrows">
-          <Link className="" to={"/"}>
-            Go Back
-          </Link>
-          <Link to={"/toprated"}>topRated</Link>
-        </div> */}
       </div>
   );
   } else {
     return(
 
-      <div className="baseProfile singUp">
-        <div className="clientRightSide" onClick={() => history.push('/register')}> Sign up to rent a movie</div>
+      <div className="baseProfile2 singUp2">
+        <div className="clientRightSide2" onClick={() => history.push('/register')}> Sign up to rent a movie</div>
       </div>
     )}
 };
