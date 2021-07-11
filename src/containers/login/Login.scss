@@ -21,23 +21,12 @@
     align-items: center;
     justify-content: center;
     margin-top: -4em;
-    width: 50vw;
+    width: 100vw;
     height: 50vh;
-    border: rgb(0, 123, 255) 33.4px solid;
-    border-bottom: rgb(174, 181, 189) 33.4px solid;
-    border-top: rgb(174, 181, 189) 33.4px solid;
-}
 
-.boxLogin {
-    display: flex;
-    margin-top: -12em;
-    margin-left: 45em;
-
-}
-.boxLogin2 {
-    display: flex;
-    margin-top: 3em;
-    margin-left: 48em;
+    border: rgb(86, 108, 133) 33.4px solid;
+    border-bottom: rgb(17, 31, 46) 33.4px solid;
+    border-top: rgb(17, 31, 46) 33.4px solid;
 }
 
 .send_button {
@@ -52,5 +41,5 @@
     height: 3em;
     width: 8em;
     margin-left: -2em;
-    margin-top: -8em;
+    margin-top: -7em;
 }
