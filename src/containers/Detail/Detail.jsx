@@ -77,15 +77,15 @@ const Detail = (props) => {
 
     return (
       <div>
-        <div className="form-outline datepicker mt-5 text-center ">
+        <div className="form-outline datepicker mt-5 text-center row m-0 align-items-center">
             <h3>Rental Date</h3><div className="gapinput"></div>
             <input className="input1 " type="date" value={datos.rentalDate} name="rentalDate" onChange={updateCredentials} /><div className="gapDetail"></div>
-            <h3>Renturn Date</h3><div className="gapinput"></div>
+            <h3>Return Date</h3><div className="gapinput"></div>
             <input className="input1" type="date" value={datos.returnDate} name="returnDate" onChange={updateCredentials} />
 
         </div>
-            <div className="buttonSend text-center">
-              <button type="button" className="bottonHeader btn btn-outline-primary button_rent2 mt-4 mb-2 " id="send_" onClick={() => order()}>Send</button>
+            <div className="buttonSend card-footer text-center ">
+              <button type="button" className="bottonHeader btn btn-outline-primary button_rent2 mt-4 mb-2" id="send_" onClick={() => order()}>Send</button>
             </div>
       </div>
     );
@@ -105,7 +105,7 @@ const Detail = (props) => {
   if ( props.credentials.user?.name) {
     return (
 
-      <div className="card mb-3  bg-dark text-white" Style="max-width: 1050px;">
+      <div className="card mb-0 text-center row m-0 align-items-center  bg-dark text-white" Style="max-width: 1050px;">
       <div className="row g-0">
         <div className="col-md-4 card bg-dark text-white">
           <img src={`${baseImgUrl}/${size}${props.movies.poster_path}`} className="img-fluid rounded-start" alt="poster"/>
@@ -123,11 +123,14 @@ const Detail = (props) => {
             </p>
             </p>
           </div>
-        </div>
-      </div>
+          <div className="card-footer text-center row m-0 align-items-center text-center">
 
           <button className="button_rent"   onClick={() => RentMovie(!card)}> Rent Movie </button>
           {card ? <Addroom a={card} /> : <HomePage h={card} />}
+          </div>
+        </div>
+      </div>
+
       </div>
   );
   } else {
