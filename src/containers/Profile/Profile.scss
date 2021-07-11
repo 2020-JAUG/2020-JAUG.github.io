@@ -11,6 +11,7 @@
 body {
     // background-color: rgb(6, 6, 6);
     background-color: #000000c0;
+    // overflow-x: hidden;
 }
 
 .baseProfile{
@@ -39,6 +40,8 @@ body {
         transition: 0.2s;
         height: 3em;
         width: 8em;
+        margin-top: 0.4em;
+        margin-bottom: 0.8em;
         border: 1.9px solid rgb(104, 104, 104);
         color: #3b3b3d;
         border-radius: 0.7em;
@@ -60,15 +63,15 @@ body {
         border: 1.7px solid #6f6d6d;
         border-radius: 0.5em;
         margin-top: -7em;
-        margin-left: 5em;
+        // margin-left: 0em;
         transition: 0.7s;
 
         background-color: rgba(235,234,234,255);
-        width: 45vw;
-        height: 57vh;
-        border: rgb(0, 123, 255) 33.4px solid;
-        border-bottom: rgb(174, 181, 189) 33.4px solid;
-        border-top: rgb(174, 181, 189) 33.4px solid;
+        // width: 45vw;
+        // height: 57vh;
+        border: rgb(86, 108, 133) 33.4px solid;
+        border-bottom: rgb(17, 31, 46) 33.4px solid;
+        border-top: rgb(17, 31, 46) 33.4px solid;
     }
     .bottonOrder{
         cursor: pointer;
