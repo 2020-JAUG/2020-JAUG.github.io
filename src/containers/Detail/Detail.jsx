@@ -136,8 +136,8 @@ const Detail = (props) => {
   } else {
     return(
 
-      <div className="baseProfile singUp">
-        <div className="clientRightSide" onClick={() => history.push('/register')}> Sign up to rent a movie</div>
+      <div className="baseProfile2 singUp2">
+        <div className="clientRightSide2" onClick={() => history.push('/register')}> Sign up to rent a movie</div>
       </div>
     )}
 };

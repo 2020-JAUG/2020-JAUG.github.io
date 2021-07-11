@@ -137,15 +137,6 @@
     border-radius: 0.7em;
     background-color: rgba(235,234,234,255);
 }
-
-// .takeDate {
-//     // left: 7em;
-//     // margin-top: -0.0em;
-//     display: flex;
-//     flex-direction: row;
-//     margin-top: 2em;
-//     margin-left: 11em;
-// }
 .gapDetail {
     display: flex;
     width: 15em;
@@ -155,7 +146,27 @@
     width: 1em;
 }
 .singUp{
-    margin-top: 18em;
-    margin-left: 30em;
+    margin-top: 23em;
+    margin-left: 0em;
     cursor: pointer;
+}
+.baseProfile2{
+
+    .clientRightSide2 {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(169,182,200,255);
+        border: 1.7px solid #6f6d6d;
+        border-radius: 0.5em;
+        margin-top: 15em;
+        // margin-left: 0em;
+        background-color: rgba(235,234,234,255);
+        // width: 100vw;
+        height: 20vh;
+        border: rgb(86, 108, 133) 33.4px solid;
+        border-bottom: rgb(17, 31, 46) 33.4px solid;
+        border-top: rgb(17, 31, 46) 33.4px solid;
+    }
 }
