@@ -57,7 +57,7 @@ const Header2 = (props) => {
     );
   } else {
     return(
-        <nav className="navbar navbar-expand-lg navbar-light  header">
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark header">
         <div className="container-fluid">
              <img onClick={() => history.push("/")} className="logoHeader" src={logo} alt="logo" height="78em" width="76"/>
           <button
