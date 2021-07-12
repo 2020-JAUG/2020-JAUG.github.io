@@ -70,7 +70,7 @@ const Profile = (props) => {
   } else {
     setTimeout(() => {
       history.push("/");
-    }, 1000);
+    }, 250);
 
     return (
       <div className="spinnerContainer">
