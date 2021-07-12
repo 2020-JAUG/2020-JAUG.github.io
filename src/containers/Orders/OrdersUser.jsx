@@ -51,7 +51,7 @@ const OrdersUser = (props) => {
           user: user.id
         };
 
-        let res = await axios.post('http://localhost:3001/orders/delete', body, {headers: { authorization: "Bearer " + token }});
+        let res = await axios.post('https://back-movie.herokuapp.com/orders/delete', body, {headers: { authorization: "Bearer " + token }});
 
         setOrders(res.data);
         window.location.reload();
