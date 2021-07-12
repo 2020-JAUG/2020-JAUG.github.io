@@ -180,200 +180,188 @@ const Register = () => {
   };
 
   return (
+    <form className="row g-3 top needs-validation">
     <div className="vistaRegister">
 
       <div className="formulario1">
-        <div className="box1">
-          <div className="errorsText">{errors.eName}</div>
-          <form className="form">
+        <div className="col-md-4 mt-2">
+            <label for="validationCustom01" className="form-label">
+              First name
+            </label>
             <input
-              className="input"
+              className="input form-control"
+              id="validationCustom01"
               name="name"
               type="text"
               onChange={updateFormulario}
-              onBlur={() => checkError("name")}
               required
             />
-            <label className="lbl-nombre">
-              <span className="text-nomb">Name</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText">{errors.eLastName}</div>
-          <form className="form1">
+        <div className="col-md-4">
+            <label for="validationCustom02" className="form-label">
+              Last name
+            </label>
             <input
-              className="input1"
+              className="input1 form-control"
+              id="validationCustom02"
               name="lastName"
               type="text"
               onChange={updateFormulario}
               onBlur={() => checkError("lastName")}
               required
             />
-            <label className="lbl-nombre1">
-              <span className="text-nomb1">Last Name</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText">{errors.eLastName2}</div>
-          <form className="form2">
+        <div className="col-md-4">
+            <label for="validationCustom03" className="form-label">
+              Last name2
+            </label>
             <input
-              className="input2"
+              className="input2 form-control"
               name="lastName2"
+              id="validationCustom03"
               type="text"
               onChange={updateFormulario}
               onBlur={() => checkError("lastName2")}
               required
             />
-            <label className="lbl-nombre2">
-              <span className="text-nomb2">Last Name 2</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText11">{errors.ePassword}</div>
-          <form className="form3">
+        <div className="col-md-4">
+            <div className="errorsText11">{errors.ePassword}</div>
+            <label for="validationCustom04" className="form-label">
+              Password
+            </label>
             <input
-              className="input3"
+              className="input3 form-control"
+              id="validationCustom04"
               name="password"
               type="password"
               onChange={updateFormulario}
               onBlur={() => checkError("password")}
               required
             />
-            <label className="lbl-nombre3">
-              <span className="text-nomb3">Password</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText1">{errors.ePassword2}</div>
-          <form className="form4">
+        <div className="col-md-4">
+            <div className="errorsText1">{errors.ePassword2}</div>
+            <label for="validationCustom05" className="form-label">
+              Repeat password
+            </label>
             <input
-              className="input4"
+              className="input4 form-control"
+              id="validationCustom05"
               name="password2"
               type="password"
               onChange={updateFormulario}
               onBlur={() => checkError("password2")}
               required
             />
-            <label className="lbl-nombre4">
-              <span className="text-nomb4">Repeat Password</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText">{errors.dateOfBirth}</div>
-          <form className="form5">
+        <div className="col-md-4">
+            <label for="validationCustom06" className="form-label">
+              Date of Birth
+            </label>
             <input
-              className="input5"
+              className="input5 form-control"
+              id="validationCustom06"
               name="dateOfBirth"
               type="date"
               onChange={updateFormulario}
               onBlur={() => checkError("dateOfBirth")}
               required
             />
-            <label className="lbl-nombre5">
-              <span className="text-nomb5">Date of Birth</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText">{errors.eCity}</div>
-          <form className="form6">
+        <div className="col-md-4">
+            <div className="errorsText12">{errors.eCity}</div>
+            <label for="validationCustom07" className="form-label">
+              City
+            </label>
             <input
-              className="input6"
+              className="input6 form-control"
+              id="validationCustom07"
               name="city"
               type="text"
               onChange={updateFormulario}
               onBlur={() => checkError("city")}
               required
             />
-            <label className="lbl-nombre6">
-              <span className="text-nomb6">City</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText">{errors.eAddress}</div>
-          <form className="form7">
+        <div className="col-md-4">
+            <div className="errorsText12">{errors.eAddress}</div>
+            <label for="validationCustom08" className="form-label">
+              Address
+            </label>
             <input
-              className="input7"
+              className="input7 form-control"
+              id="validationCustom08"
               name="address"
               type="text"
               onChange={updateFormulario}
               onBlur={() => checkError("address")}
               required
             />
-            <label className="lbl-nombre7">
-              <span className="text-nomb7">Address</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText">{errors.eCp}</div>
-          <form className="form8">
+        <div className="col-md-4">
+            <div className="errorsText12">{errors.eCp}</div>
+            <label for="validationCustom09" className="form-label">
+              Postal Code
+            </label>
             <input
-              className="input8"
+              className="form-control"
+              id="validationCustom09"
               name="cp"
               type="text"
               onChange={updateFormulario}
               onBlur={() => checkError("cp")}
               required
             />
-            <label className="lbl-nombre8">
-              <span className="text-nomb8">Postal Code</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText12">{errors.eEmail}</div>
-          <form className="form9">
+        <div className="col-md-4">
+            <div className="errorsText12">{errors.eEmail}</div>
+            <label for="validationCustom10" className="form-label">
+              Email
+            </label>
             <input
-              className="input9"
+              className="form-control"
+              id="validationCustom10"
               name="email"
               type="text"
               onChange={updateFormulario}
               onBlur={() => checkError("email")}
               required
             />
-            <label className="lbl-nombre9">
-              <span className="text-nomb9">Email</span>
-            </label>
-          </form>
         </div>
 
-        <div className="box1">
-          <div className="errorsText13">{errors.ePhone}</div>
-          <form className="form10">
+        <div className="col-md-4">
+            <div className="errorsText13">{errors.ePhone}</div>
+            <label for="validationCustom11" className="form-label">
+              Phone
+            </label>
             <input
-              className="input10"
+              className="form-control"
+              id="validationCustom11"
               name="phone"
               type="text"
               onChange={updateFormulario}
               onBlur={() => checkError("phone")}
               required
             />
-            <label className="lbl-nombre10">
-              <span className="text-nomb10">Phone</span>
-            </label>
-          </form>
         </div>
+        <div className="">
+          <div className="registerButton " onClick={() => applyRegister()}>
+            Send
+          </div>
       </div>
-        <div className="registerButton" onClick={() => applyRegister()}>
-          Send
         </div>
     </div>
+    </form>
   );
 };
 
