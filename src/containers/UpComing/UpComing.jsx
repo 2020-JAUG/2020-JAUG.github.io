@@ -72,8 +72,8 @@ const UpComing = (props) => {
         </div>
 
         <div className="movieContent">
-            <div className="leftt" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
-            <div className="rightt" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+            <div Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
+            <div Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
           {movies.map((movie, index) => (
             <div
               className="content"
@@ -89,8 +89,8 @@ const UpComing = (props) => {
               </div>
             </div>
           ))}
-            <div onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
-            <div onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+            <div Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
+            <div Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
         </div>
       </div>
     );

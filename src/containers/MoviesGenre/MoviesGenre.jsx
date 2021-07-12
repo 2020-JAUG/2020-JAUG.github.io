@@ -79,8 +79,8 @@ const MoviesGenre = (props) => {
                     <div className="fondoIMage"></div>
                 </div>
                 <div className="movieContent" >
-                        <div  onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
-                        <div  onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+                        <div Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
+                        <div Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
                     {props.movies.map((movie, index) => (
                         <div className="content" key={index} onClick={() => clickHandler(movie)}>
                             <div className="content2" >
@@ -88,8 +88,8 @@ const MoviesGenre = (props) => {
                             </div>
                         </div>
                     ))}
-                    <div  onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
-                    <div  onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+                    <div Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
+                    <div Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
                 </div>
             </div>
         )
@@ -101,6 +101,8 @@ const MoviesGenre = (props) => {
         );
     }
 };
+
+
 export default connect((state) => ({
     credentials: state.credentials,
     movies: state.movies
