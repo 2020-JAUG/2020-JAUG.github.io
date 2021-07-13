@@ -61,7 +61,7 @@ const Header2 = (props) => {
         <div className="container-fluid">
              <img onClick={() => history.push("/")} className="logoHeader" src={logo} alt="logo" height="78em" width="76"/>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler burguer"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
