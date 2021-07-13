@@ -92,8 +92,8 @@ const Home = (props) => {
               </div>
             </div>
           ))}
-              <div Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 17em;"></div>
-              <div Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div>
+            <div Style="width: 3em;"></div><div Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 9em;"></div>
+            <div Style="width: 6em;"></div><div Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div><div Style="width: 3em;"></div>
         </div>
       </div>
     );
