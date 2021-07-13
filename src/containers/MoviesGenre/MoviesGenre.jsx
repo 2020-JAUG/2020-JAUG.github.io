@@ -88,8 +88,8 @@ const MoviesGenre = (props) => {
                             </div>
                         </div>
                     ))}
-                    <div Style="width: 3em;"></div><div className="arrowD" Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 9em;"></div>
-                    <div Style="width: 6em;"></div><div className="arrowD" Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div><div Style="width: 3em;"></div>
+                    <div Style="width: 3em;"></div> <div Style="width: 4em;"></div>  <div className="t" Style="color: white;" onClick={()=> changePage("-")}><FontAwesomeIcon icon={faArrowLeft}/></div><div Style="width: 8em;"></div>
+                    <div Style="width: 16em;"></div><div className="t" Style="color: white;" onClick={()=> changePage("+")}><FontAwesomeIcon icon={faArrowRight}/></div><div Style="width: -6em;"></div>
                 </div>
             </div>
         )
