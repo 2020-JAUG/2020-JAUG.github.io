@@ -165,7 +165,7 @@ const UpdateUser = (props) => {
 
     if( props.credentials?.token ) {
        return(
-           <div className="clientUpdateContainer">
+           <form className="row mt-5 top needs-validation">
 
             <div className="updatePassword">
 
@@ -251,7 +251,7 @@ const UpdateUser = (props) => {
                 </form>
                 <div className="updateButton" onClick={() => updateUser()}>UPDATE</div>
             </div>
-           </div>
+           </form>
        )
     } else {
 

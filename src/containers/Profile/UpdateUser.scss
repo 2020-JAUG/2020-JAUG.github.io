@@ -1,27 +1,11 @@
-.clientUpdateContainer {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 6em;
-    margin-left: 5em;
-
-    gap: 11em;
-    background-color: rgba(235,234,234,255);
-    width: 90vw;
-    height: 60%;
-    border: rgb(0, 123, 255) 33.4px solid;
-    border-bottom: rgb(174, 181, 189) 33.4px solid;
-    border-top: rgb(174, 181, 189) 33.4px solid;
-}
-
 .updateContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 
-    width: 30em;
+
+    width: 24em;
     height: 40em;
     padding: 1em;
     margin-bottom: 1em;
@@ -55,12 +39,13 @@
 
     margin-right: 5em;
     padding-top: 2em;
-    width: 30em;
+    width: 28em;
     height: 25em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .titleUpdate {
+    color: white;
     margin-bottom: -1em;
 }
 
@@ -71,7 +56,7 @@
 }
 
 .box2 {
-    width: 30em;
+    width: 17em;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
