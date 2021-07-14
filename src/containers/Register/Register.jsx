@@ -65,7 +65,6 @@ const Register = () => {
       email: datosUser.email,
       phone: datosUser.phone,
     };
-    console.log("body", body);
 
     axios
         .post("https://back-movie.herokuapp.com/users", body)

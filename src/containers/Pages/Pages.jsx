@@ -30,7 +30,6 @@ const Top = () => {
     const bringFilms = async () => {
 
         try {
-            console.log("estamos en la página....",page);
             let res = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&language=en-US&page=${page}`);
             setFilms(res.data.results);
 

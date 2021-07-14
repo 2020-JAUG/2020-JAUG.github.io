@@ -40,7 +40,6 @@ const UpdateOrders = (props) => {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
-        console.log("respuestaBack", res.data);
         setTimeout(() => {
           history.push("/profile");
         }, 250);

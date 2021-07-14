@@ -122,7 +122,6 @@ const UpdateUser = (props) => {
             break;
 
             case 'email':
-                console.log("hola, soy error de email");
                 if (! /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g.test(updateInfo.email)){
                     setErrors({...errors, eEmail: 'Please enter a valid e-mail'});
                 }else{

@@ -41,11 +41,9 @@ const AllUsers = (props) => {
           user: user.id
         };
 
-        console.log(body)
         let res = await axios.post('https://back-movie.herokuapp.com/users/removeuser', body, {headers: { authorization: "Bearer " + token }});
 
         setUsers(res.data);
-        console.log('removeUser', res.data);
         window.location.reload();
     }
 

@@ -51,8 +51,6 @@ const Detail = (props) => {
         rentalDate: datos.rentalDate,
         returnDate: datos.returnDate
     }
-    console.log('datoss', body);
-
 
       // Envío por axios
       axios
