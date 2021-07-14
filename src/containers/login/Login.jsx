@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { LOGIN } from "../../redux/types";
+import {notification} from 'antd';
 
 const Login = (props) => {
   let history = useHistory();
@@ -79,9 +80,10 @@ const Login = (props) => {
           history.push("/admin");
         }
       })
-      .catch((msgError, err) => {
+      .catch((err) => {
         // console.log(err.response.data.message);
-        setMensajeError({ ...msgError, eValidate: "Wrong email or password" });
+        // setMensajeError({ ...msgError, eValidate: "Wrong email or password" });
+        notification.warning({message:'Atencion.',description: JSON.stringify(err.response.data.message)});
       });
   };
 
