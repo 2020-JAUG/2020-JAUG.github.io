@@ -67,7 +67,6 @@ const Login = (props) => {
       password: credentials.password,
     };
     // Envío por axios
-    // "https://video-rados-b.herokuapp.com/1/user/login", body)
     axios
       .post("https://back-movie.herokuapp.com/login", body)
       .then((res) => {
@@ -120,7 +119,7 @@ const Login = (props) => {
           </div>
         </div>
         <div className="send_button" onClick={() => logeame()}>
-          Sing in
+          Sign in
         </div>
       </div>
     </form>
